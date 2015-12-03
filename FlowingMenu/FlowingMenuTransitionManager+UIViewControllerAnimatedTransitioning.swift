@@ -26,28 +26,23 @@
 
 import UIKit
 
-extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
-  public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    animationMode = .Presentation
+extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
+  public func animateTransition(context: UIViewControllerContextTransitioning) {
+    let fromVC = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+    let toVC   = context.viewControllerForKey(UITransitionContextToViewControllerKey)!
 
-    return self
+    let containerView = context.containerView()!
+    let menuView      = animationMode == .Presentation ? toVC.view : fromVC.view
+    let otherView     = animationMode == .Presentation ? fromVC.view : toVC.view
+
+    let action = animationMode == .Presentation ? presentMenu : dismissMenu
+
+    action(menuView, otherView: otherView, containerView: containerView, duration: transitionDuration(context)) {
+      context.completeTransition(!context.transitionWasCancelled())
+    }
   }
 
-  public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    animationMode = .Dismissal
-
-    return self
-  }
-
-  public func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    animationMode = .Presentation
-
-    return interactive ? self : nil
-  }
-
-  public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    animationMode = .Dismissal
-
-    return interactive ? self : nil
+  public func transitionDuration(context: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    return 0.2
   }
 }

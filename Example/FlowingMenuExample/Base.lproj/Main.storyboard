@@ -225,7 +225,7 @@
                                     <navigationItem title="Chat" id="w6u-PD-rhN">
                                         <barButtonItem key="leftBarButtonItem" image="picto-back" id="Nop-Yc-SOJ">
                                             <connections>
-                                                <segue destination="8vz-XP-ehK" kind="unwind" unwindAction="unwindToMainViewController:" id="d62-K6-eB0"/>
+                                                <segue destination="8vz-XP-ehK" kind="unwind" identifier="DismissMenuSegue" unwindAction="unwindToMainViewController:" id="d62-K6-eB0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

@@ -8,21 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelegate {
   @IBOutlet weak var topBar: UINavigationBar!
   @IBOutlet weak var userTableView: UITableView!
   @IBOutlet var flowingMenuTransitionManager: FlowingMenuTransitionManager!
 
-  let SegueName = "PresentMenuSegue"
-  let CellName  = "UserContactCell"
+  let PresentSegueName = "PresentMenuSegue"
+  let DismissSegueName = "DismissMenuSegue"
+  let CellName         = "UserContactCell"
 
   let users          = User.dummyUsers()
   let mainColor      = UIColor(hex: 0x804C5F)
   let derivatedColor = UIColor(hex: 0x794759)
 
+  var menu: UIViewController?
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    flowingMenuTransitionManager.setInteractivePresentationView(view)
+    flowingMenuTransitionManager.delegate = self
+    
     topBar.tintColor              = .whiteColor()
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
@@ -35,9 +41,13 @@ class ViewController: UIViewController, UITableViewDataSource {
   // MARK: - Interacting with Storyboards and Segues
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == SegueName {
+    if segue.identifier == PresentSegueName {
       let vc                   = segue.destinationViewController
       vc.transitioningDelegate = flowingMenuTransitionManager
+
+      flowingMenuTransitionManager.setInteractiveDismissView(vc.view)
+
+      menu = vc
     }
   }
 
@@ -50,6 +60,16 @@ class ViewController: UIViewController, UITableViewDataSource {
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return .LightContent
+  }
+
+  // MARK: - FlowingMenuDelegate Methods
+
+  func flowingMenuInteractiveTransitionWillPresent(sender: FlowingMenuTransitionManager) {
+    performSegueWithIdentifier(PresentSegueName, sender: self)
+  }
+
+  func flowingMenuInteractiveTransitionWillDismiss(sender: FlowingMenuTransitionManager) {
+    menu?.performSegueWithIdentifier(DismissSegueName, sender: self)
   }
 
   // MARK: - UITableView DataSource Methods

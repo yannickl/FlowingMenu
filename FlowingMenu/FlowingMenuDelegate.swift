@@ -26,28 +26,7 @@
 
 import UIKit
 
-extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
-  public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    animationMode = .Presentation
-
-    return self
-  }
-
-  public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    animationMode = .Dismissal
-
-    return self
-  }
-
-  public func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    animationMode = .Presentation
-
-    return interactive ? self : nil
-  }
-
-  public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    animationMode = .Dismissal
-
-    return interactive ? self : nil
-  }
+public protocol FlowingMenuDelegate: class {
+  func flowingMenuInteractiveTransitionWillPresent(sender: FlowingMenuTransitionManager)
+  func flowingMenuInteractiveTransitionWillDismiss(sender: FlowingMenuTransitionManager)
 }

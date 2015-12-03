@@ -26,24 +26,27 @@
 
 import UIKit
 
-public final class FlowingMenuTransitionManager: NSObject {
+public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTransition {
   enum AnimationMode {
     case Presentation
     case Dismissal
   }
 
-  var animationMode: AnimationMode = .Presentation
-  let duration = 0.2
+  public weak var delegate: FlowingMenuDelegate?
 
-  private func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, completion: () -> Void) {
+  var menuWidth     = CGFloat(250)
+  var animationMode = AnimationMode.Presentation
+  var interactive   = false
+
+  func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, duration: NSTimeInterval, completion: () -> Void) {
     let ov = otherView.snapshotViewAfterScreenUpdates(true)
 
     containerView.addSubview(ov)
     containerView.addSubview(menuView)
 
     var menuFrame        = menuView.frame
-    menuFrame.size.width = 250
-    menuFrame.origin.x   = -250
+    menuFrame.size.width = menuWidth
+    menuFrame.origin.x   = -menuWidth
     menuView.frame       = menuFrame
 
     UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
@@ -57,7 +60,7 @@ public final class FlowingMenuTransitionManager: NSObject {
     }
   }
 
-  private func dismissMenu(menuView: UIView, otherView: UIView, containerView: UIView, completion: () -> Void) {
+  func dismissMenu(menuView: UIView, otherView: UIView, containerView: UIView, duration: NSTimeInterval, completion: () -> Void) {
     let ov = otherView.snapshotViewAfterScreenUpdates(true)
 
     var menuFrame = menuView.frame
@@ -78,26 +81,5 @@ public final class FlowingMenuTransitionManager: NSObject {
       }) { _ in
         completion()
     }
-  }
-}
-
-extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
-  public func animateTransition(context: UIViewControllerContextTransitioning) {
-    let fromVC = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-    let toVC   = context.viewControllerForKey(UITransitionContextToViewControllerKey)!
-
-    let containerView = context.containerView()!
-    let menuView      = animationMode == .Presentation ? toVC.view : fromVC.view
-    let otherView     = animationMode == .Presentation ? fromVC.view : toVC.view
-
-    let action = animationMode == .Presentation ? presentMenu : dismissMenu
-
-    action(menuView, otherView: otherView, containerView: containerView) {
-      context.completeTransition(!context.transitionWasCancelled())
-    }
-  }
-
-  public func transitionDuration(context: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return duration
   }
 }
