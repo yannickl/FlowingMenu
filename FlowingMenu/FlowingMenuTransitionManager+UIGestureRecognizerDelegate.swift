@@ -26,6 +26,9 @@
 
 import UIKit
 
+/**
+ Here manage the interactive transition mainly thanks to the gestures.
+*/
 extension FlowingMenuTransitionManager {
   public func setInteractivePresentationView(view: UIView) {
     let screenEdgePanGesture   = UIScreenEdgePanGestureRecognizer()
@@ -43,27 +46,62 @@ extension FlowingMenuTransitionManager {
     view.addGestureRecognizer(panGesture)
   }
 
+  // MARK: - Responding to Gesture Events
+
   func panToPresentAction(pan: UIScreenEdgePanGestureRecognizer) {
     let view        = pan.view!
     let translation = pan.translationInView(view)
 
-    let percentage = min(max(translation.x / menuWidth, 0), 1)
+    let percentage = min(max(translation.x / (menuWidth / 2), 0), 1)
 
     switch pan.state {
     case .Began:
+      shapeMaskLayer.path = UIBezierPath(rect: view.bounds).CGPath
+      
+      controlPoints.0.removeFromSuperview()
+      controlPoints.1.removeFromSuperview()
+      controlPoints.2.removeFromSuperview()
+      controlPoints.3.removeFromSuperview()
+      controlPoints.4.removeFromSuperview()
+      controlPoints.5.removeFromSuperview()
+      controlPoints.6.removeFromSuperview()
+
+      view.addSubview(controlPoints.0)
+      view.addSubview(controlPoints.1)
+      view.addSubview(controlPoints.2)
+      view.addSubview(controlPoints.3)
+      view.addSubview(controlPoints.4)
+      view.addSubview(controlPoints.5)
+      view.addSubview(controlPoints.6)
+
       interactive = true
 
       delegate?.flowingMenuInteractiveTransitionWillPresent(self)
+
+      fallthrough
     case .Changed:
       updateInteractiveTransition(percentage)
-    default:
-      interactive = false
 
-      if percentage >= 0.3 {
-        finishInteractiveTransition()
+      let waveWidth = translation.x * 0.9
+      let baseWidth = waveWidth * 0.1
+
+      let locationY = pan.locationInView(pan.view).y
+
+      layoutControlPoints(baseWidth, waveWidth: waveWidth, locationY: locationY)
+
+      updateShapeLayer()
+    default:
+      if percentage < 1 {
+        let locationY = pan.locationInView(pan.view).y
+        
+        layoutControlPoints(0, waveWidth: 0, locationY: locationY)
+
+        animating = true
+
+        cancelInteractiveTransition()
       }
       else {
-        cancelInteractiveTransition()
+        finishInteractiveTransition()
       }
     }
   }
@@ -84,12 +122,61 @@ extension FlowingMenuTransitionManager {
     default:
       interactive = false
 
-      if percentage >= 0.3 {
+      if percentage > 0.2 {
         finishInteractiveTransition()
       }
       else {
         cancelInteractiveTransition()
       }
     }
+  }
+
+  // MARK: -
+
+  func currentPath() -> CGPath {
+    let bezierPath = UIBezierPath()
+
+    bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
+    bezierPath.addLineToPoint(CGPoint(x: controlPoints.0.dg_center(animating).x, y: 0))
+    bezierPath.addCurveToPoint(controlPoints.2.dg_center(animating), controlPoint1: controlPoints.0.dg_center(animating), controlPoint2: controlPoints.1.dg_center(animating))
+    bezierPath.addCurveToPoint(controlPoints.4.dg_center(animating), controlPoint1: controlPoints.3.dg_center(animating), controlPoint2: controlPoints.4.dg_center(animating))
+    bezierPath.addCurveToPoint(controlPoints.6.dg_center(animating), controlPoint1: controlPoints.4.dg_center(animating), controlPoint2: controlPoints.5.dg_center(animating))
+    bezierPath.addLineToPoint(CGPoint(x: 0, y: 667))
+
+    bezierPath.closePath()
+
+    return bezierPath.CGPath
+  }
+
+  func updateShapeLayer() {
+    shapeLayer.path = currentPath()
+  }
+
+  func layoutControlPoints(baseWidth: CGFloat, waveWidth: CGFloat, locationY: CGFloat) {
+    let height = CGFloat(667)
+
+    let minTopY    = min((locationY - height / 2) * 0.28, 0)
+    let maxBottomY = max(height + (locationY - height / 2) * 0.28, height)
+
+    let leftPartWidth  = locationY - minTopY
+    let rightPartWidth = maxBottomY - locationY
+
+    controlPoints.0.center = CGPoint(x: baseWidth, y: minTopY)
+    controlPoints.1.center = CGPoint(x: baseWidth, y: minTopY + leftPartWidth * 0.44)
+    controlPoints.2.center = CGPoint(x: baseWidth + waveWidth * 0.64, y: minTopY + leftPartWidth * 0.71)
+    controlPoints.3.center = CGPoint(x: baseWidth + waveWidth * 1.36, y: locationY)
+    controlPoints.4.center = CGPoint(x: baseWidth + waveWidth * 0.64, y: maxBottomY - rightPartWidth * 0.71)
+    controlPoints.5.center = CGPoint(x: baseWidth, y: maxBottomY - (rightPartWidth * 0.44))
+    controlPoints.6.center = CGPoint(x: baseWidth, y: height)
+  }
+}
+
+extension UIView {
+  func dg_center(usePresentationLayerIfPossible: Bool) -> CGPoint {
+    if usePresentationLayerIfPossible, let presentationLayer = layer.presentationLayer() as? CALayer {
+      return presentationLayer.position
+    }
+
+    return center
   }
 }

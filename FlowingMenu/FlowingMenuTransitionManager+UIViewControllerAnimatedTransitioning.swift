@@ -26,6 +26,10 @@
 
 import UIKit
 
+/**
+Conforming to the `UIViewControllerAnimatedTransitioning` protocol to manage the
+ transition animation.
+*/
 extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
   public func animateTransition(context: UIViewControllerContextTransitioning) {
     let fromVC = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
@@ -37,12 +41,12 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
 
     let action = animationMode == .Presentation ? presentMenu : dismissMenu
 
-    action(menuView, otherView: otherView, containerView: containerView, duration: transitionDuration(context)) {
+    action(menuView, otherView: otherView, containerView: containerView, context: context, duration: transitionDuration(context)) {
       context.completeTransition(!context.transitionWasCancelled())
     }
   }
 
   public func transitionDuration(context: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return 0.2
+    return interactive ? 0.6 : 0.2
   }
 }
