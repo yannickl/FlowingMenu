@@ -12,7 +12,6 @@
 		CECF53CB1C0F86DD00DF6B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF53C91C0F86DD00DF6B92 /* Main.storyboard */; };
 		CECF53CD1C0F86DD00DF6B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECF53CC1C0F86DD00DF6B92 /* Assets.xcassets */; };
 		CECF53D01C0F86DD00DF6B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF53CE1C0F86DD00DF6B92 /* LaunchScreen.storyboard */; };
-		CECF53DB1C0F876D00DF6B92 /* FlowingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53DA1C0F876D00DF6B92 /* FlowingLayer.swift */; };
 		CECF53E01C0F92D400DF6B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53DF1C0F92D400DF6B92 /* User.swift */; };
 		CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53E41C10403D00DF6B92 /* UIColor.swift */; };
 		CECF53EA1C10469700DF6B92 /* UserContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53E91C10469700DF6B92 /* UserContactCellView.swift */; };
@@ -21,8 +20,9 @@
 		CECF53F01C10595E00DF6B92 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */; };
 		CECF53F21C10886B00DF6B92 /* UserChatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */; };
 		CECF53F41C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
-		CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizerDelegate.swift */; };
+		CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
 		CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
+		CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,6 @@
 		CECF53CC1C0F86DD00DF6B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CECF53CF1C0F86DD00DF6B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECF53D11C0F86DD00DF6B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CECF53DA1C0F876D00DF6B92 /* FlowingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingLayer.swift; sourceTree = "<group>"; };
 		CECF53DF1C0F92D400DF6B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CECF53E41C10403D00DF6B92 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CECF53E91C10469700DF6B92 /* UserContactCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContactCellView.swift; sourceTree = "<group>"; };
@@ -42,8 +41,9 @@
 		CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserChatCellView.swift; sourceTree = "<group>"; };
 		CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift"; sourceTree = "<group>"; };
-		CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
 		CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuDelegate.swift; sourceTree = "<group>"; };
+		CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+Delegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +94,12 @@
 		CECF53D91C0F876D00DF6B92 /* FlowingMenu */ = {
 			isa = PBXGroup;
 			children = (
-				CECF53DA1C0F876D00DF6B92 /* FlowingLayer.swift */,
-				CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */,
-				CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */,
-				CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */,
-				CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizerDelegate.swift */,
 				CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */,
+				CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */,
+				CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */,
+				CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */,
+				CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */,
+				CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */,
 			);
 			name = FlowingMenu;
 			path = ../FlowingMenu;
@@ -210,9 +210,9 @@
 				CECF53F01C10595E00DF6B92 /* MenuViewController.swift in Sources */,
 				CECF53C61C0F86DD00DF6B92 /* AppDelegate.swift in Sources */,
 				CECF53EC1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
-				CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizerDelegate.swift in Sources */,
-				CECF53DB1C0F876D00DF6B92 /* FlowingLayer.swift in Sources */,
+				CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
 				CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */,
+				CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
 				CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

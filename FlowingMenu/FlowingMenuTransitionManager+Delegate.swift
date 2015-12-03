@@ -25,8 +25,11 @@
  */
 
 import UIKit
-import QuartzCore
 
-class FlowingLayer: CAShapeLayer {
+extension FlowingMenuTransitionManager: FlowingMenuDelegate {
+  public func flowingMenuInteractiveTransitionWillPresent(flowingMenu: FlowingMenuTransitionManager) {
+  }
 
+  public func flowingMenuInteractiveTransitionWillDismiss(flowingMenu: FlowingMenuTransitionManager) {
+  }
 }

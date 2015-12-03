@@ -26,6 +26,11 @@
 
 import UIKit
 
+/**
+ Conforming to the `UIViewControllerTransitioningDelegate` protocol to define the
+ objects used to manage a fixed-length or interactive transition between view
+ controllers.
+*/
 extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
   public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animationMode = .Presentation

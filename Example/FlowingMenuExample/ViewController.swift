@@ -62,13 +62,17 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     return .LightContent
   }
 
-  // MARK: - FlowingMenuDelegate Methods
+  // MARK: - FlowingMenu Delegate Methods
 
-  func flowingMenuInteractiveTransitionWillPresent(sender: FlowingMenuTransitionManager) {
+  func flowingMenu(flowingfMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
+    return 250
+  }
+
+  func flowingMenuInteractiveTransitionWillPresent(flowingMenu: FlowingMenuTransitionManager) {
     performSegueWithIdentifier(PresentSegueName, sender: self)
   }
 
-  func flowingMenuInteractiveTransitionWillDismiss(sender: FlowingMenuTransitionManager) {
+  func flowingMenuInteractiveTransitionWillDismiss(flowingMenu: FlowingMenuTransitionManager) {
     menu?.performSegueWithIdentifier(DismissSegueName, sender: self)
   }
 

@@ -51,28 +51,13 @@ extension FlowingMenuTransitionManager {
   func panToPresentAction(pan: UIScreenEdgePanGestureRecognizer) {
     let view        = pan.view!
     let translation = pan.translationInView(view)
+    let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
 
     let percentage = min(max(translation.x / (menuWidth / 2), 0), 1)
 
     switch pan.state {
     case .Began:
       shapeMaskLayer.path = UIBezierPath(rect: view.bounds).CGPath
-      
-      controlPoints.0.removeFromSuperview()
-      controlPoints.1.removeFromSuperview()
-      controlPoints.2.removeFromSuperview()
-      controlPoints.3.removeFromSuperview()
-      controlPoints.4.removeFromSuperview()
-      controlPoints.5.removeFromSuperview()
-      controlPoints.6.removeFromSuperview()
-
-      view.addSubview(controlPoints.0)
-      view.addSubview(controlPoints.1)
-      view.addSubview(controlPoints.2)
-      view.addSubview(controlPoints.3)
-      view.addSubview(controlPoints.4)
-      view.addSubview(controlPoints.5)
-      view.addSubview(controlPoints.6)
 
       interactive = true
 
@@ -109,7 +94,8 @@ extension FlowingMenuTransitionManager {
   func panToDismissAction(pan: UIPanGestureRecognizer) {
     let view        = pan.view!
     let translation = pan.translationInView(view)
-
+    let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
+    
     let percentage = min(max(translation.x / menuWidth * -1, 0), 1)
 
     switch pan.state {
@@ -137,11 +123,11 @@ extension FlowingMenuTransitionManager {
     let bezierPath = UIBezierPath()
 
     bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
-    bezierPath.addLineToPoint(CGPoint(x: controlPoints.0.dg_center(animating).x, y: 0))
-    bezierPath.addCurveToPoint(controlPoints.2.dg_center(animating), controlPoint1: controlPoints.0.dg_center(animating), controlPoint2: controlPoints.1.dg_center(animating))
-    bezierPath.addCurveToPoint(controlPoints.4.dg_center(animating), controlPoint1: controlPoints.3.dg_center(animating), controlPoint2: controlPoints.4.dg_center(animating))
-    bezierPath.addCurveToPoint(controlPoints.6.dg_center(animating), controlPoint1: controlPoints.4.dg_center(animating), controlPoint2: controlPoints.5.dg_center(animating))
-    bezierPath.addLineToPoint(CGPoint(x: 0, y: 667))
+    bezierPath.addLineToPoint(CGPoint(x: controlPoints[0].dg_center(animating).x, y: 0))
+    bezierPath.addCurveToPoint(controlPoints[2].dg_center(animating), controlPoint1: controlPoints[0].dg_center(animating), controlPoint2: controlPoints[1].dg_center(animating))
+    bezierPath.addCurveToPoint(controlPoints[4].dg_center(animating), controlPoint1: controlPoints[3].dg_center(animating), controlPoint2: controlPoints[4].dg_center(animating))
+    bezierPath.addCurveToPoint(controlPoints[6].dg_center(animating), controlPoint1: controlPoints[4].dg_center(animating), controlPoint2: controlPoints[5].dg_center(animating))
+    bezierPath.addLineToPoint(CGPoint(x: 0, y: controlPoints[7].center.y))
 
     bezierPath.closePath()
 
@@ -153,21 +139,20 @@ extension FlowingMenuTransitionManager {
   }
 
   func layoutControlPoints(baseWidth: CGFloat, waveWidth: CGFloat, locationY: CGFloat) {
-    let height = CGFloat(667)
-
+    let height     = controlPoints[7].center.y
     let minTopY    = min((locationY - height / 2) * 0.28, 0)
     let maxBottomY = max(height + (locationY - height / 2) * 0.28, height)
 
     let leftPartWidth  = locationY - minTopY
     let rightPartWidth = maxBottomY - locationY
 
-    controlPoints.0.center = CGPoint(x: baseWidth, y: minTopY)
-    controlPoints.1.center = CGPoint(x: baseWidth, y: minTopY + leftPartWidth * 0.44)
-    controlPoints.2.center = CGPoint(x: baseWidth + waveWidth * 0.64, y: minTopY + leftPartWidth * 0.71)
-    controlPoints.3.center = CGPoint(x: baseWidth + waveWidth * 1.36, y: locationY)
-    controlPoints.4.center = CGPoint(x: baseWidth + waveWidth * 0.64, y: maxBottomY - rightPartWidth * 0.71)
-    controlPoints.5.center = CGPoint(x: baseWidth, y: maxBottomY - (rightPartWidth * 0.44))
-    controlPoints.6.center = CGPoint(x: baseWidth, y: height)
+    controlPoints[0].center = CGPoint(x: baseWidth, y: minTopY)
+    controlPoints[1].center = CGPoint(x: baseWidth, y: minTopY + leftPartWidth * 0.44)
+    controlPoints[2].center = CGPoint(x: baseWidth + waveWidth * 0.64, y: minTopY + leftPartWidth * 0.71)
+    controlPoints[3].center = CGPoint(x: baseWidth + waveWidth * 1.36, y: locationY)
+    controlPoints[4].center = CGPoint(x: baseWidth + waveWidth * 0.64, y: maxBottomY - rightPartWidth * 0.71)
+    controlPoints[5].center = CGPoint(x: baseWidth, y: maxBottomY - (rightPartWidth * 0.44))
+    controlPoints[6].center = CGPoint(x: baseWidth, y: height)
   }
 }
 

@@ -26,7 +26,30 @@
 
 import UIKit
 
+/**
+ The delegate of a `FlowMenuTransitionManager` object should adopt this protocol
+ and implement to manage the .
+ */
 public protocol FlowingMenuDelegate: class {
-  func flowingMenuInteractiveTransitionWillPresent(sender: FlowingMenuTransitionManager)
-  func flowingMenuInteractiveTransitionWillDismiss(sender: FlowingMenuTransitionManager)
+  // MARK: - Laying Out the Menu
+
+  /**
+  Called by the flowing menu transition manager when it needs to display the menu.
+
+  - parameter flowingfMenu: The flowingfMenu menu transition manager requesting
+  the width.
+  - parameter menuView: The menu view which will be displayed.
+  - returns: The width of the menu view.
+  */
+  func flowingMenu(flowingfMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat
+
+  // MARK: -
+  func flowingMenuInteractiveTransitionWillPresent(flowingMenu: FlowingMenuTransitionManager)
+  func flowingMenuInteractiveTransitionWillDismiss(flowingMenu: FlowingMenuTransitionManager)
+}
+
+extension FlowingMenuDelegate {
+  public func flowingMenu(flowingfMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
+    return menuView.bounds.width
+  }
 }

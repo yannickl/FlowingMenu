@@ -36,8 +36,11 @@ import QuartzCore
  interactive.
 */
 public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTransition {
+  /// Defines the animation mode of the transition.
   enum AnimationMode {
+    /// Present the menu mode.
     case Presentation
+    /// Dismiss the menu mode.
     case Dismissal
   }
 
@@ -51,7 +54,6 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   */
   public weak var delegate: FlowingMenuDelegate?
 
-  var menuWidth     = CGFloat(250)
   var animationMode = AnimationMode.Presentation
 
   // MARK: - Defining Interactive Components
@@ -61,7 +63,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       displayLink.paused = !animating
     }
   }
-  var controlPoints  = (UIView(), UIView(), UIView(), UIView(), UIView(), UIView(), UIView())
+  var controlPoints  = (0 ..< 8).map { _ in UIView() }
   var shapeLayer     = CAShapeLayer()
   var shapeMaskLayer = CAShapeLayer()
   lazy var displayLink: CADisplayLink = {
@@ -83,6 +85,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     let maskLayer       = CAShapeLayer()
     menuView.layer.mask = maskLayer
 
+    let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: menuView)
     let maxSideSize = max(menuView.bounds.width, menuView.bounds.height)
     let beginRect   = CGRectMake(1, menuView.bounds.height / 2 - 1, 2, 2)
     let middleRect  = CGRectMake(-menuWidth, 0, menuWidth * 2, menuView.bounds.height)
@@ -113,6 +116,13 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       maskLayer.addAnimation(bubbleAnim, forKey: "bubbleAnim")
     }
     else {
+      for view in controlPoints {
+        view.removeFromSuperview()
+        menuView.addSubview(view)
+      }
+
+      controlPoints[7].center = CGPoint(x: 0, y: menuView.bounds.height)
+
       shapeMaskLayer.removeAllAnimations()
 
       shapeLayer.frame           = CGRectZero
@@ -150,13 +160,9 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
           self.shapeMaskLayer.addAnimation(anim, forKey: "bubbleAnim")
 
           UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: { () -> Void in
-            self.controlPoints.0.center.x = self.menuWidth
-            self.controlPoints.1.center.x = self.menuWidth
-            self.controlPoints.2.center.x = self.menuWidth
-            self.controlPoints.3.center.x = self.menuWidth
-            self.controlPoints.4.center.x = self.menuWidth
-            self.controlPoints.5.center.x = self.menuWidth
-            self.controlPoints.6.center.x = self.menuWidth
+            for view in self.controlPoints {
+              view.center.x = menuWidth
+            }
             }, completion: { _ in
               self.shapeLayer.removeFromSuperlayer()
 

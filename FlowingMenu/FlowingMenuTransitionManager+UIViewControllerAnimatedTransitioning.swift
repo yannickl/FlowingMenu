@@ -27,9 +27,9 @@
 import UIKit
 
 /**
-Conforming to the `UIViewControllerAnimatedTransitioning` protocol to manage the
+ Conforming to the `UIViewControllerAnimatedTransitioning` protocol to manage the
  transition animation.
-*/
+ */
 extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
   public func animateTransition(context: UIViewControllerContextTransitioning) {
     let fromVC = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
