@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CECF53C61C0F86DD00DF6B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53C51C0F86DD00DF6B92 /* AppDelegate.swift */; };
+		CECF53C81C0F86DD00DF6B92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53C71C0F86DD00DF6B92 /* ViewController.swift */; };
+		CECF53CB1C0F86DD00DF6B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF53C91C0F86DD00DF6B92 /* Main.storyboard */; };
+		CECF53CD1C0F86DD00DF6B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECF53CC1C0F86DD00DF6B92 /* Assets.xcassets */; };
+		CECF53D01C0F86DD00DF6B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF53CE1C0F86DD00DF6B92 /* LaunchScreen.storyboard */; };
+		CECF53DB1C0F876D00DF6B92 /* FlowingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53DA1C0F876D00DF6B92 /* FlowingLayer.swift */; };
+		CECF53E01C0F92D400DF6B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53DF1C0F92D400DF6B92 /* User.swift */; };
+		CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53E41C10403D00DF6B92 /* UIColor.swift */; };
+		CECF53EA1C10469700DF6B92 /* UserContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53E91C10469700DF6B92 /* UserContactCellView.swift */; };
+		CECF53EC1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
+		CECF53EE1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CECF53F01C10595E00DF6B92 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */; };
+		CECF53F21C10886B00DF6B92 /* UserChatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowingMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECF53C51C0F86DD00DF6B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CECF53C71C0F86DD00DF6B92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CECF53CA1C0F86DD00DF6B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CECF53CC1C0F86DD00DF6B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CECF53CF1C0F86DD00DF6B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CECF53D11C0F86DD00DF6B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECF53DA1C0F876D00DF6B92 /* FlowingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingLayer.swift; sourceTree = "<group>"; };
+		CECF53DF1C0F92D400DF6B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CECF53E41C10403D00DF6B92 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CECF53E91C10469700DF6B92 /* UserContactCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContactCellView.swift; sourceTree = "<group>"; };
+		CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitionManager.swift; sourceTree = "<group>"; };
+		CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserChatCellView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CECF53BF1C0F86DD00DF6B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CECF53B91C0F86DD00DF6B92 = {
+			isa = PBXGroup;
+			children = (
+				CECF53D91C0F876D00DF6B92 /* FlowingMenu */,
+				CECF53C41C0F86DD00DF6B92 /* FlowingMenuExample */,
+				CECF53C31C0F86DD00DF6B92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CECF53C31C0F86DD00DF6B92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECF53C41C0F86DD00DF6B92 /* FlowingMenuExample */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53E81C10469700DF6B92 /* cells */,
+				CECF53DE1C0F92D400DF6B92 /* model */,
+				CECF53E31C10403D00DF6B92 /* utils */,
+				CECF53C51C0F86DD00DF6B92 /* AppDelegate.swift */,
+				CECF53C71C0F86DD00DF6B92 /* ViewController.swift */,
+				CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */,
+				CECF53C91C0F86DD00DF6B92 /* Main.storyboard */,
+				CECF53CC1C0F86DD00DF6B92 /* Assets.xcassets */,
+				CECF53CE1C0F86DD00DF6B92 /* LaunchScreen.storyboard */,
+				CECF53D11C0F86DD00DF6B92 /* Info.plist */,
+			);
+			path = FlowingMenuExample;
+			sourceTree = "<group>";
+		};
+		CECF53D91C0F876D00DF6B92 /* FlowingMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53DA1C0F876D00DF6B92 /* FlowingLayer.swift */,
+				CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */,
+				CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */,
+			);
+			name = FlowingMenu;
+			path = ../FlowingMenu;
+			sourceTree = "<group>";
+		};
+		CECF53DE1C0F92D400DF6B92 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53DF1C0F92D400DF6B92 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		CECF53E31C10403D00DF6B92 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53E41C10403D00DF6B92 /* UIColor.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		CECF53E81C10469700DF6B92 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53E91C10469700DF6B92 /* UserContactCellView.swift */,
+				CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CECF53C11C0F86DD00DF6B92 /* FlowingMenuExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECF53D41C0F86DD00DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuExample" */;
+			buildPhases = (
+				CECF53BE1C0F86DD00DF6B92 /* Sources */,
+				CECF53BF1C0F86DD00DF6B92 /* Frameworks */,
+				CECF53C01C0F86DD00DF6B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowingMenuExample;
+			productName = FlowingMenuExample;
+			productReference = CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CECF53BA1C0F86DD00DF6B92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Yannick LORIOT";
+				TargetAttributes = {
+					CECF53C11C0F86DD00DF6B92 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = CECF53BD1C0F86DD00DF6B92 /* Build configuration list for PBXProject "FlowingMenuExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CECF53B91C0F86DD00DF6B92;
+			productRefGroup = CECF53C31C0F86DD00DF6B92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CECF53C11C0F86DD00DF6B92 /* FlowingMenuExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CECF53C01C0F86DD00DF6B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECF53D01C0F86DD00DF6B92 /* LaunchScreen.storyboard in Resources */,
+				CECF53CD1C0F86DD00DF6B92 /* Assets.xcassets in Resources */,
+				CECF53CB1C0F86DD00DF6B92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CECF53BE1C0F86DD00DF6B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECF53EE1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				CECF53F21C10886B00DF6B92 /* UserChatCellView.swift in Sources */,
+				CECF53E01C0F92D400DF6B92 /* User.swift in Sources */,
+				CECF53C81C0F86DD00DF6B92 /* ViewController.swift in Sources */,
+				CECF53EA1C10469700DF6B92 /* UserContactCellView.swift in Sources */,
+				CECF53F01C10595E00DF6B92 /* MenuViewController.swift in Sources */,
+				CECF53C61C0F86DD00DF6B92 /* AppDelegate.swift in Sources */,
+				CECF53EC1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
+				CECF53DB1C0F876D00DF6B92 /* FlowingLayer.swift in Sources */,
+				CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CECF53C91C0F86DD00DF6B92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CECF53CA1C0F86DD00DF6B92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CECF53CE1C0F86DD00DF6B92 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CECF53CF1C0F86DD00DF6B92 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CECF53D21C0F86DD00DF6B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CECF53D31C0F86DD00DF6B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CECF53D51C0F86DD00DF6B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlowingMenuExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CECF53D61C0F86DD00DF6B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlowingMenuExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CECF53BD1C0F86DD00DF6B92 /* Build configuration list for PBXProject "FlowingMenuExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECF53D21C0F86DD00DF6B92 /* Debug */,
+				CECF53D31C0F86DD00DF6B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CECF53D41C0F86DD00DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECF53D51C0F86DD00DF6B92 /* Debug */,
+				CECF53D61C0F86DD00DF6B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CECF53BA1C0F86DD00DF6B92 /* Project object */;
+}
