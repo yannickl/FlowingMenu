@@ -56,7 +56,7 @@ extension FlowingMenuTransitionManager {
       delegate?.flowingMenuInteractiveTransitionWillPresent(self)
     case .Changed:
       updateInteractiveTransition(percentage)
-    default: // .Ended, .Cancelled, .Failed ...
+    default:
       interactive = false
 
       if percentage >= 0.3 {
@@ -81,7 +81,7 @@ extension FlowingMenuTransitionManager {
       delegate?.flowingMenuInteractiveTransitionWillDismiss(self)
     case .Changed:
       updateInteractiveTransition(percentage)
-    default: // .Ended, .Cancelled, .Failed ...
+    default:
       interactive = false
 
       if percentage >= 0.3 {

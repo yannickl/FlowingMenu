@@ -26,6 +26,14 @@
 
 import UIKit
 
+/**
+ The `FlowingMenuTransitionManager` aims to drive the transition between two
+ views by providing an flowing/elastic and bouncing animation effect.
+ 
+ You must adopt the `FlowingMenuDelegate` if you want to make the transition
+ interactive. It relies on the `UIPercentDrivenInteractiveTransition` and the 
+ manager needs some informations to know which view displayed.
+*/
 public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTransition {
   enum AnimationMode {
     case Presentation
@@ -39,23 +47,44 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   var interactive   = false
 
   func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, duration: NSTimeInterval, completion: () -> Void) {
+    // Composing the view
     let ov = otherView.snapshotViewAfterScreenUpdates(true)
 
     containerView.addSubview(ov)
     containerView.addSubview(menuView)
 
+    // Add a mask to the menu to create the bubble effect
+    let maskLayer       = CAShapeLayer()
+    menuView.layer.mask = maskLayer
+
+    let maxSideSize = max(menuView.bounds.width, menuView.bounds.height)
+    let beginRect   = CGRectMake(1, menuView.bounds.height / 2 - 1, 2, 2)
+    let middleRect  = CGRectMake(-menuWidth, 0, menuWidth * 2, menuView.bounds.height)
+    let endRect     = CGRectMake(-maxSideSize, menuView.bounds.height / 2 - maxSideSize, maxSideSize * 2, maxSideSize * 2)
+
+    // Defining the menu frame
     var menuFrame        = menuView.frame
     menuFrame.size.width = menuWidth
-    menuFrame.origin.x   = -menuWidth
     menuView.frame       = menuFrame
 
-    UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
+    // Start the animations
+    let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
+    bubbleAnim.values              = [beginRect, middleRect, endRect].map { UIBezierPath(ovalInRect: $0).CGPath }
+    bubbleAnim.keyTimes            = [0, 0.4, 1]
+    bubbleAnim.duration            = duration
+    bubbleAnim.removedOnCompletion = false
+    bubbleAnim.fillMode            = kCAFillModeForwards
+    maskLayer.addAnimation(bubbleAnim, forKey: "bubbleAnim")
+
+    UIView.animateWithDuration(duration, animations: { _ in
       menuFrame.origin.x = 0
       menuView.frame     = menuFrame
-
-      otherView.alpha = 0
-      ov.alpha        = 0.4
+      otherView.alpha    = 0
+      ov.alpha           = 0.4
       }) { _ in
+        maskLayer.removeAllAnimations()
+        menuView.layer.mask = nil
+
         completion()
     }
   }
