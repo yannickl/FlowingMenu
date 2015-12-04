@@ -83,7 +83,7 @@ public protocol FlowingMenuDelegate: class {
 extension FlowingMenuDelegate {
   /// Returns the 2/3 menu view width.
   public func flowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
-    return menuView.bounds.width * 0.7
+    return menuView.bounds.width * 2 / 3
   }
 
   /// Use the menu background by default.
