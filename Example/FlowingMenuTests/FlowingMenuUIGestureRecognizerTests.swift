@@ -31,6 +31,22 @@ class FlowingMenuUIGestureRecognizerTests: XCTTestCaseTemplate {
     XCTAssertEqual(CGPathGetPathBoundingBox(customPath), CGRectMake(0, 0, 5, 5))
   }
 
+  func testCurrentPath_Animating() {
+    transitionManager.animating = true
+
+    let defaultPath = transitionManager.currentPath()
+
+    XCTAssertFalse(CGPathIsEmpty(defaultPath))
+    XCTAssertEqual(CGPathGetPathBoundingBox(defaultPath), CGRectZero)
+
+    transitionManager.controlViews[1].center = CGPointMake(5, 5)
+    transitionManager.controlViews[2].center = CGPointMake(5, 5)
+    transitionManager.controlViews[3].center = CGPointMake(0, 5)
+
+    let customPath = transitionManager.currentPath()
+    XCTAssertEqual(CGPathGetPathBoundingBox(customPath), CGRectMake(0, 0, 5, 5))
+  }
+
   func testUpdateShapeLayer() {
     transitionManager.updateShapeLayer()
 
