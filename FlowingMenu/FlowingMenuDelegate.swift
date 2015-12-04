@@ -34,22 +34,51 @@ public protocol FlowingMenuDelegate: class {
   // MARK: - Laying Out the Menu
 
   /**
-  Called by the flowing menu transition manager when it needs to display the menu.
+  Called by the flowing menu transition manager when it needs to display the
+  menu.
 
-  - parameter flowingfMenu: The flowingfMenu menu transition manager requesting
+  - parameter transitionManager: The flowing menu transition manager requesting
   the width.
   - parameter menuView: The menu view which will be displayed.
-  - returns: The width of the menu view.
+  - returns: The width of the menu view. Outside the menu view a black overlay 
+  will be displayed.
   */
-  func flowingMenu(flowingfMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat
+  func flowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat
 
-  // MARK: -
-  func flowingMenuInteractiveTransitionWillPresent(flowingMenu: FlowingMenuTransitionManager)
-  func flowingMenuInteractiveTransitionWillDismiss(flowingMenu: FlowingMenuTransitionManager)
+  // MARK: - Responding to Interactive Transition
+
+  /**
+  Called by the flowing menu transition manager when the interactive transition
+  begins its presentation. You should implement this methods to present your
+  menu view.
+  
+  - parameter transitionManager: The flowing menu transition manager requesting
+  the width.
+  */
+  func flowingMenuTransitionManagerNeedsPresentMenu(transitionManager: FlowingMenuTransitionManager)
+
+  /**
+   Called by the flowing menu transition manager when the interactive transition
+   begins its dismissal. You should implement this methods to dismiss your menu
+   view.
+
+   - parameter transitionManager: The flowing menu transition manager requesting
+   the width.
+   */
+  func flowingMenuTransitionManagerNeedsDismissMenu(transitionManager: FlowingMenuTransitionManager)
 }
 
 extension FlowingMenuDelegate {
-  public func flowingMenu(flowingfMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
-    return menuView.bounds.width
+  /// Returns the 2/3 menu view width.
+  public func flowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
+    return menuView.bounds.width * 0.7
+  }
+
+  /// You should implement this method to display the menu. By default nothing happens.
+  public func flowingMenuTransitionManagerNeedsPresentMenu(transitionManager: FlowingMenuTransitionManager) {
+  }
+
+  /// You should implement this method to dismiss the menu. By default nothing happens.
+  public func flowingMenuTransitionManagerNeedsDismissMenu(transitionManager: FlowingMenuTransitionManager) {
   }
 }

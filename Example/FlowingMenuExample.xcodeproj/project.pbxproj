@@ -23,6 +23,7 @@
 		CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
 		CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
 		CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CECF53FE1C1193A700DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
 		CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuDelegate.swift; sourceTree = "<group>"; };
 		CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+Delegate.swift"; sourceTree = "<group>"; };
+		CECF53FD1C1193A700DF6B92 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */,
 				CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */,
 				CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */,
+				CECF53FD1C1193A700DF6B92 /* UIView.swift */,
 			);
 			name = FlowingMenu;
 			path = ../FlowingMenu;
@@ -211,6 +214,7 @@
 				CECF53C61C0F86DD00DF6B92 /* AppDelegate.swift in Sources */,
 				CECF53EC1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
 				CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CECF53FE1C1193A700DF6B92 /* UIView.swift in Sources */,
 				CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */,
 				CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
 				CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */,

@@ -51,9 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     }
   }
 
-  @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
-    // bug? exit segue doesn't dismiss so we do it manually...
-    //self.dismissViewControllerAnimated(true, completion: nil)
+  @IBAction func unwindToMainViewController(sender: UIStoryboardSegue) {
   }
 
   // MARK: - Managing the Status Bar
@@ -64,15 +62,11 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
 
   // MARK: - FlowingMenu Delegate Methods
 
-  func flowingMenu(flowingfMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
-    return 250
-  }
-
-  func flowingMenuInteractiveTransitionWillPresent(flowingMenu: FlowingMenuTransitionManager) {
+  func flowingMenuTransitionManagerNeedsPresentMenu(transitionManager: FlowingMenuTransitionManager) {
     performSegueWithIdentifier(PresentSegueName, sender: self)
   }
 
-  func flowingMenuInteractiveTransitionWillDismiss(flowingMenu: FlowingMenuTransitionManager) {
+  func flowingMenuTransitionManagerNeedsDismissMenu(transitionManager: FlowingMenuTransitionManager) {
     menu?.performSegueWithIdentifier(DismissSegueName, sender: self)
   }
 

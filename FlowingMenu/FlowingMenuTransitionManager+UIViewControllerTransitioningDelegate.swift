@@ -32,24 +32,44 @@ import UIKit
  controllers.
 */
 extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
+  /**
+   Asks the flowing menu transition manager for the transition animator object to
+   use when presenting a view controller.
+   
+   It returns itself.
+  */
   public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animationMode = .Presentation
 
     return self
   }
 
+  /**
+   Asks the flowing menu transition manager for the transition animator object to
+   use when dismissing a view controller.
+   
+   It returns itself.
+   */
   public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animationMode = .Dismissal
 
     return self
   }
 
+  /**
+   Asks the flowing menu transition manager for the interactive animator object to
+   use when presenting a view controller.
+  */
   public func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     animationMode = .Presentation
 
     return interactive ? self : nil
   }
 
+  /**
+   Asks the flowing menu transition manager for the interactive animator object to
+   use when dismissing a view controller.
+  */
   public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     animationMode = .Dismissal
 

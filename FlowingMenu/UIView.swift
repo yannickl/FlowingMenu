@@ -26,6 +26,22 @@
 
 import UIKit
 
-/// The flowing menu transition manager is it's own delegate by default.
-extension FlowingMenuTransitionManager: FlowingMenuDelegate {
+/// Adding an helper to UIView to get the presentation layer center point.
+extension UIView {
+  /**
+   If `usePresentationLayer` is true it'll returns the presentation layer center
+   point. Returns the center of the view otherwise.
+   
+   - parameter usePresentationLayer: A boolean flag to tell which center point
+   needs to return.
+   - returns: The center point of the presentation layer or the view according to
+   the flag.
+  */
+  func center(usePresentationLayer: Bool) -> CGPoint {
+    if usePresentationLayer, let presentationLayer = layer.presentationLayer() as? CALayer {
+      return presentationLayer.position
+    }
+
+    return center
+  }
 }

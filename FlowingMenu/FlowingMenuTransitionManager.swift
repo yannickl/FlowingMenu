@@ -36,14 +36,6 @@ import QuartzCore
  interactive.
 */
 public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTransition {
-  /// Defines the animation mode of the transition.
-  enum AnimationMode {
-    /// Present the menu mode.
-    case Presentation
-    /// Dismiss the menu mode.
-    case Dismissal
-  }
-
   // MARK: - Specifying the Delegate
 
   /**
@@ -54,18 +46,31 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   */
   public weak var delegate: FlowingMenuDelegate?
 
+  // MARK: - Managing the Animation Mode
+
+  /// Defines the animation mode of the transition.
+  enum AnimationMode {
+    /// Present the menu mode.
+    case Presentation
+    /// Dismiss the menu mode.
+    case Dismissal
+  }
+
+  /// The current animation mode.
   var animationMode = AnimationMode.Presentation
 
   // MARK: - Defining Interactive Components
-  var interactive   = false
-  var animating     = false {
-    didSet {
-      displayLink.paused = !animating
-    }
-  }
-  var controlPoints  = (0 ..< 8).map { _ in UIView() }
+
+  /// Flag to know when whether the transition is interactive.
+  var interactive = false
+
+  /// Control views aims to build the elastic shape.
+  var controlViews   = (0 ..< 8).map { _ in UIView() }
+  /// Shaper layer used to draw the elastic view.
   var shapeLayer     = CAShapeLayer()
+  /// Mask to used to create the bubble effect.
   var shapeMaskLayer = CAShapeLayer()
+  /// The display link used to create the bouncing effect.
   lazy var displayLink: CADisplayLink = {
     let displayLink    = CADisplayLink(target: self, selector: Selector("updateShapeLayer"))
     displayLink.paused = true
@@ -73,10 +78,20 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
 
     return displayLink
   }()
+  /// Flag to pause/run the display link.
+  var animating = false {
+    didSet {
+      displayLink.paused = !animating
+    }
+  }
 
+  // MARK: - Working with Animations
+  
+  /// Present menu animation.
   func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning, duration: NSTimeInterval, completion: () -> Void) {
     // Composing the view
     let ov = otherView.snapshotViewAfterScreenUpdates(true)
+    ov.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 
     containerView.addSubview(ov)
     containerView.addSubview(menuView)
@@ -85,7 +100,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     let maskLayer       = CAShapeLayer()
     menuView.layer.mask = maskLayer
 
-    let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: menuView)
+    let menuWidth   = (delegate ?? self).flowingMenuTransitionManager(self, widthOfMenuView: menuView)
     let maxSideSize = max(menuView.bounds.width, menuView.bounds.height)
     let beginRect   = CGRectMake(1, menuView.bounds.height / 2 - 1, 2, 2)
     let middleRect  = CGRectMake(-menuWidth, 0, menuWidth * 2, menuView.bounds.height)
@@ -116,16 +131,16 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       maskLayer.addAnimation(bubbleAnim, forKey: "bubbleAnim")
     }
     else {
-      for view in controlPoints {
+      for view in controlViews {
         view.removeFromSuperview()
         menuView.addSubview(view)
       }
 
-      controlPoints[7].center = CGPoint(x: 0, y: menuView.bounds.height)
+      controlViews[7].center = CGPoint(x: 0, y: menuView.bounds.height)
 
       shapeMaskLayer.removeAllAnimations()
 
-      shapeLayer.frame           = CGRectZero
+      shapeMaskLayer.path        = UIBezierPath(rect: ov.bounds).CGPath
       shapeLayer.backgroundColor = UIColor(hex: 0x804C5F).CGColor
       shapeLayer.fillColor       = UIColor(hex: 0x804C5F).CGColor
       shapeLayer.mask            = shapeMaskLayer
@@ -141,7 +156,6 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       }) { _ in
         if self.interactive && !context.transitionWasCancelled() {
           self.interactive = false
-          self.animating   = true
 
           let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
           bubbleAnim.values              = [beginRect, middleRect, endRect].map { UIBezierPath(ovalInRect: $0).CGPath }
@@ -160,7 +174,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
           self.shapeMaskLayer.addAnimation(anim, forKey: "bubbleAnim")
 
           UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: { () -> Void in
-            for view in self.controlPoints {
+            for view in self.controlViews {
               view.center.x = menuWidth
             }
             }, completion: { _ in
@@ -181,8 +195,10 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     }
   }
 
+  /// Dismiss menu animation.
   func dismissMenu(menuView: UIView, otherView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning, duration: NSTimeInterval, completion: () -> Void) {
-    let ov = otherView.snapshotViewAfterScreenUpdates(true)
+    otherView.frame = containerView.bounds
+    let ov          = otherView.snapshotViewAfterScreenUpdates(true)
 
     var menuFrame = menuView.frame
 

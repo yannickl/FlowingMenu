@@ -31,6 +31,11 @@ import UIKit
  transition animation.
  */
 extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
+  /**
+   Tells your animator object to perform the transition animations.
+
+   The context object containing information about the transition.
+  */
   public func animateTransition(context: UIViewControllerContextTransitioning) {
     let fromVC = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
     let toVC   = context.viewControllerForKey(UITransitionContextToViewControllerKey)!
@@ -46,6 +51,12 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
     }
   }
 
+  /**
+   Asks your animator object for the duration (in seconds) of the transition
+   animation.
+
+   The context object containing information to use during the transition.
+  */
   public func transitionDuration(context: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return interactive ? 0.6 : 0.2
   }
