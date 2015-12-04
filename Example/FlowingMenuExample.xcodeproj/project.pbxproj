@@ -24,7 +24,42 @@
 		CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
 		CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
 		CECF53FE1C1193A700DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
+		CECF54061C11A6C600DF6B92 /* FlowingMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF54051C11A6C600DF6B92 /* FlowingMenuUITests.swift */; };
+		CECF54141C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF54131C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift */; };
+		CECF541C1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF541B1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift */; };
+		CECF541D1C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
+		CECF541E1C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
+		CECF541F1C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CECF54201C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		CECF54211C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		CECF54221C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CECF54231C11AC5400DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
+		CECF54241C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
+		CECF54251C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
+		CECF54261C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CECF54271C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		CECF54281C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		CECF54291C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CECF542A1C11AC5400DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
+		CECF542C1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF542B1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CECF54081C11A6C600DF6B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECF53BA1C0F86DD00DF6B92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECF53C11C0F86DD00DF6B92;
+			remoteInfo = FlowingMenuExample;
+		};
+		CECF54161C11AB2D00DF6B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECF53BA1C0F86DD00DF6B92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECF53C11C0F86DD00DF6B92;
+			remoteInfo = FlowingMenuExample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowingMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,10 +81,32 @@
 		CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuDelegate.swift; sourceTree = "<group>"; };
 		CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+Delegate.swift"; sourceTree = "<group>"; };
 		CECF53FD1C1193A700DF6B92 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CECF54031C11A6C600DF6B92 /* FlowingMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowingMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECF54051C11A6C600DF6B92 /* FlowingMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingMenuUITests.swift; sourceTree = "<group>"; };
+		CECF54071C11A6C600DF6B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECF54111C11AB2D00DF6B92 /* FlowingMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowingMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECF54131C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingMenuUIGestureRecognizerTests.swift; sourceTree = "<group>"; };
+		CECF54151C11AB2D00DF6B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECF541B1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTTestCaseTemplate.swift; sourceTree = "<group>"; };
+		CECF542B1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitionManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CECF53BF1C0F86DD00DF6B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECF54001C11A6C600DF6B92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECF540E1C11AB2D00DF6B92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +121,8 @@
 			children = (
 				CECF53D91C0F876D00DF6B92 /* FlowingMenu */,
 				CECF53C41C0F86DD00DF6B92 /* FlowingMenuExample */,
+				CECF54121C11AB2D00DF6B92 /* FlowingMenuTests */,
+				CECF54041C11A6C600DF6B92 /* FlowingMenuUITests */,
 				CECF53C31C0F86DD00DF6B92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */,
+				CECF54031C11A6C600DF6B92 /* FlowingMenuUITests.xctest */,
+				CECF54111C11AB2D00DF6B92 /* FlowingMenuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +194,26 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		CECF54041C11A6C600DF6B92 /* FlowingMenuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CECF54051C11A6C600DF6B92 /* FlowingMenuUITests.swift */,
+				CECF54071C11A6C600DF6B92 /* Info.plist */,
+			);
+			path = FlowingMenuUITests;
+			sourceTree = "<group>";
+		};
+		CECF54121C11AB2D00DF6B92 /* FlowingMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				CECF541B1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift */,
+				CECF542B1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift */,
+				CECF54131C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift */,
+				CECF54151C11AB2D00DF6B92 /* Info.plist */,
+			);
+			path = FlowingMenuTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +234,42 @@
 			productReference = CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CECF54021C11A6C600DF6B92 /* FlowingMenuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECF540A1C11A6C600DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuUITests" */;
+			buildPhases = (
+				CECF53FF1C11A6C600DF6B92 /* Sources */,
+				CECF54001C11A6C600DF6B92 /* Frameworks */,
+				CECF54011C11A6C600DF6B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CECF54091C11A6C600DF6B92 /* PBXTargetDependency */,
+			);
+			name = FlowingMenuUITests;
+			productName = FlowingMenuUITests;
+			productReference = CECF54031C11A6C600DF6B92 /* FlowingMenuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CECF54101C11AB2D00DF6B92 /* FlowingMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECF54181C11AB2D00DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuTests" */;
+			buildPhases = (
+				CECF540D1C11AB2D00DF6B92 /* Sources */,
+				CECF540E1C11AB2D00DF6B92 /* Frameworks */,
+				CECF540F1C11AB2D00DF6B92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CECF54171C11AB2D00DF6B92 /* PBXTargetDependency */,
+			);
+			name = FlowingMenuTests;
+			productName = FlowingMenuTests;
+			productReference = CECF54111C11AB2D00DF6B92 /* FlowingMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +282,14 @@
 				TargetAttributes = {
 					CECF53C11C0F86DD00DF6B92 = {
 						CreatedOnToolsVersion = 7.1.1;
+					};
+					CECF54021C11A6C600DF6B92 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = CECF53C11C0F86DD00DF6B92;
+					};
+					CECF54101C11AB2D00DF6B92 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = CECF53C11C0F86DD00DF6B92;
 					};
 				};
 			};
@@ -182,6 +307,8 @@
 			projectRoot = "";
 			targets = (
 				CECF53C11C0F86DD00DF6B92 /* FlowingMenuExample */,
+				CECF54101C11AB2D00DF6B92 /* FlowingMenuTests */,
+				CECF54021C11A6C600DF6B92 /* FlowingMenuUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +321,20 @@
 				CECF53D01C0F86DD00DF6B92 /* LaunchScreen.storyboard in Resources */,
 				CECF53CD1C0F86DD00DF6B92 /* Assets.xcassets in Resources */,
 				CECF53CB1C0F86DD00DF6B92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECF54011C11A6C600DF6B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECF540F1C11AB2D00DF6B92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +362,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CECF53FF1C11A6C600DF6B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECF542A1C11AC5400DF6B92 /* UIView.swift in Sources */,
+				CECF54251C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
+				CECF54261C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
+				CECF54281C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				CECF54291C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				CECF54241C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */,
+				CECF54271C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CECF54061C11A6C600DF6B92 /* FlowingMenuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECF540D1C11AB2D00DF6B92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECF54221C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				CECF541D1C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */,
+				CECF54141C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift in Sources */,
+				CECF541E1C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
+				CECF542C1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift in Sources */,
+				CECF541C1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift in Sources */,
+				CECF54211C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				CECF54201C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CECF54231C11AC5400DF6B92 /* UIView.swift in Sources */,
+				CECF541F1C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CECF54091C11A6C600DF6B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CECF53C11C0F86DD00DF6B92 /* FlowingMenuExample */;
+			targetProxy = CECF54081C11A6C600DF6B92 /* PBXContainerItemProxy */;
+		};
+		CECF54171C11AB2D00DF6B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CECF53C11C0F86DD00DF6B92 /* FlowingMenuExample */;
+			targetProxy = CECF54161C11AB2D00DF6B92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CECF53C91C0F86DD00DF6B92 /* Main.storyboard */ = {
@@ -348,6 +534,62 @@
 			};
 			name = Release;
 		};
+		CECF540B1C11A6C600DF6B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = FlowingMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FlowingMenuExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CECF540C1C11A6C600DF6B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = FlowingMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FlowingMenuExample;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		CECF54191C11AB2D00DF6B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = FlowingMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowingMenuExample.app/FlowingMenuExample";
+			};
+			name = Debug;
+		};
+		CECF541A1C11AB2D00DF6B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = FlowingMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlowingMenuExample.app/FlowingMenuExample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +610,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CECF540A1C11A6C600DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECF540B1C11A6C600DF6B92 /* Debug */,
+				CECF540C1C11A6C600DF6B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CECF54181C11AB2D00DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECF54191C11AB2D00DF6B92 /* Debug */,
+				CECF541A1C11AB2D00DF6B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

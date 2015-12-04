@@ -45,6 +45,18 @@ public protocol FlowingMenuDelegate: class {
   */
   func flowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat
 
+  // MARK: - Drawing the Elastic Shape
+
+  /**
+  Asks the delegate the color of the shape drawn during an interactive
+  transition.
+
+  - parameter menuView: The menu view which will be displayed.
+  - returns: The shape color. If nil it will use the menu background color and
+  if menu has no background color, the shape will be black.
+  */
+  func colorOfElasticShapeInFlowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager) -> UIColor?
+
   // MARK: - Responding to Interactive Transition
 
   /**
@@ -72,6 +84,11 @@ extension FlowingMenuDelegate {
   /// Returns the 2/3 menu view width.
   public func flowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
     return menuView.bounds.width * 0.7
+  }
+
+  /// Use the menu background by default.
+  public func colorOfElasticShapeInFlowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager) -> UIColor? {
+    return nil
   }
 
   /// You should implement this method to display the menu. By default nothing happens.
