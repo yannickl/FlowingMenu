@@ -45,8 +45,9 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
     let otherView     = animationMode == .Presentation ? fromVC.view : toVC.view
 
     let action = animationMode == .Presentation ? presentMenu : dismissMenu
+    let status = FlowingMenuTransitionStatus(context: context)
 
-    action(menuView, otherView: otherView, containerView: containerView, context: context, duration: transitionDuration(context)) {
+    action(menuView, otherView: otherView, containerView: containerView, status: status, duration: transitionDuration(context)) {
       context.completeTransition(!context.transitionWasCancelled())
     }
   }

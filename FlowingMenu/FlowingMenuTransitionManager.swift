@@ -88,7 +88,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   // MARK: - Working with Animations
   
   /// Present menu animation.
-  func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning, duration: NSTimeInterval, completion: () -> Void) {
+  func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: NSTimeInterval, completion: () -> Void) {
     // Composing the view
     let ov = otherView.snapshotViewAfterScreenUpdates(true)
     ov.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -155,8 +155,8 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       menuView.frame     = menuFrame
       otherView.alpha    = 0
       ov.alpha           = 0.4
-      }) { _ in
-        if self.interactive && !context.transitionWasCancelled() {
+      }) { finished in
+        if self.interactive && !status.transitionWasCancelled() {
           self.interactive = false
 
           let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
@@ -198,7 +198,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   }
 
   /// Dismiss menu animation.
-  func dismissMenu(menuView: UIView, otherView: UIView, containerView: UIView, context: UIViewControllerContextTransitioning, duration: NSTimeInterval, completion: () -> Void) {
+  func dismissMenu(menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: NSTimeInterval, completion: () -> Void) {
     otherView.frame = containerView.bounds
     let ov          = otherView.snapshotViewAfterScreenUpdates(true)
 

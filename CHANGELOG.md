@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.2.0 (Under development)
+
+- [REFACTORING] Adding the `FlowingMenuTransitionStatus` class to allow animation testing
+
 ## [Version 0.1.0](https://github.com/yannickl/FlowingMenu/releases/tag/0.1.0)
 Released on 2015-12-04.
 
