@@ -5,6 +5,6 @@ before_install:
 script:
   - xcodebuild -version
   - xcodebuild -project Example/FlowingMenuExample.xcodeproj -scheme FlowingMenuTests -sdk iphonesimulator -destination "OS=9.1,name=iPad 2" -configuration Release ONLY_ACTIVE_ARCH=YES test | xcpretty -c
-  - bash <(curl -s https://raw.githubusercontent.com/codecov/codecov-bash/a11ca6ae492a300173d7b950dab42cb6bbfb5c14/codecov)
+  - bash <(curl -s https://raw.githubusercontent.com/codecov/codecov-bash/f2eb50dc217b3720ddc20af24794f5c609291d4c/codecov) -d
   - xcodebuild -project Example/FlowingMenuExample.xcodeproj -scheme FlowingMenuUITests -sdk iphonesimulator -destination "OS=9.1,name=iPad 2" -configuration Release ONLY_ACTIVE_ARCH=YES test | xcpretty -c
-  - bash <(curl -s https://raw.githubusercontent.com/codecov/codecov-bash/a11ca6ae492a300173d7b950dab42cb6bbfb5c14/codecov)
+  - bash <(curl -s https://raw.githubusercontent.com/codecov/codecov-bash/f2eb50dc217b3720ddc20af24794f5c609291d4c/codecov) -d
