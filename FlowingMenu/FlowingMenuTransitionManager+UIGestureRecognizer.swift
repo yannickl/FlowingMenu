@@ -68,7 +68,7 @@ extension FlowingMenuTransitionManager {
   func panToPresentAction(panGesture: UIScreenEdgePanGestureRecognizer) {
     let view        = panGesture.view!
     let translation = panGesture.translationInView(view)
-    let menuWidth   = (delegate ?? self).flowingMenuTransitionManager(self, widthOfMenuView: view)
+    let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
 
     let yLocation  = panGesture.locationInView(panGesture.view).y
     let percentage = min(max(translation.x / (menuWidth / 2), 0), 1)
@@ -77,7 +77,7 @@ extension FlowingMenuTransitionManager {
     case .Began:
       interactive = true
 
-      delegate?.flowingMenuTransitionManagerNeedsPresentMenu(self)
+      delegate?.flowingMenuNeedsPresentMenu(self)
 
       fallthrough
     case .Changed:
@@ -112,7 +112,7 @@ extension FlowingMenuTransitionManager {
   func panToDismissAction(panGesture: UIPanGestureRecognizer) {
     let view        = panGesture.view!
     let translation = panGesture.translationInView(view)
-    let menuWidth   = (delegate ?? self).flowingMenuTransitionManager(self, widthOfMenuView: view)
+    let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
     
     let percentage = min(max(translation.x / menuWidth * -1, 0), 1)
 
@@ -120,7 +120,7 @@ extension FlowingMenuTransitionManager {
     case .Began:
       interactive = true
 
-      delegate?.flowingMenuTransitionManagerNeedsDismissMenu(self)
+      delegate?.flowingMenuNeedsDismissMenu(self)
     case .Changed:
       updateInteractiveTransition(percentage)
     default:

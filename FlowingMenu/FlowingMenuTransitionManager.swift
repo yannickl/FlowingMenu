@@ -101,7 +101,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     menuView.layer.mask = maskLayer
 
     let source      = delegate ?? self
-    let menuWidth   = source.flowingMenuTransitionManager(self, widthOfMenuView: menuView)
+    let menuWidth   = source.flowingMenu(self, widthOfMenuView: menuView)
     let maxSideSize = max(menuView.bounds.width, menuView.bounds.height)
     let beginRect   = CGRectMake(1, menuView.bounds.height / 2 - 1, 2, 2)
     let middleRect  = CGRectMake(-menuWidth, 0, menuWidth * 2, menuView.bounds.height)
@@ -141,7 +141,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
 
       shapeMaskLayer.removeAllAnimations()
 
-      let shapeColor = source.colorOfElasticShapeInFlowingMenuTransitionManager(self) ?? menuView.backgroundColor ?? .blackColor()
+      let shapeColor = source.colorOfElasticShapeInFlowingMenu(self) ?? menuView.backgroundColor ?? .blackColor()
       shapeMaskLayer.path        = UIBezierPath(rect: ov.bounds).CGPath
       shapeLayer.backgroundColor = shapeColor.CGColor
       shapeLayer.fillColor       = shapeColor.CGColor

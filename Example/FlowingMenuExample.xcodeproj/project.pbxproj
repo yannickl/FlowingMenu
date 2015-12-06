@@ -798,6 +798,7 @@
 				CECF540C1C11A6C600DF6B92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CECF54181C11AB2D00DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -806,6 +807,7 @@
 				CECF541A1C11AB2D00DF6B92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CECF543B1C11B5C400DF6B92 /* Build configuration list for PBXNativeTarget "FlowingMenu" */ = {
 			isa = XCConfigurationList;
@@ -814,6 +816,7 @@
 				CECF543D1C11B5C400DF6B92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

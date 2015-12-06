@@ -62,15 +62,15 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
 
   // MARK: - FlowingMenu Delegate Methods
 
-  func colorOfElasticShapeInFlowingMenuTransitionManager(transitionManager: FlowingMenuTransitionManager) -> UIColor? {
+  func colorOfElasticShapeInFlowingMenu(flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
     return mainColor
   }
 
-  func flowingMenuTransitionManagerNeedsPresentMenu(transitionManager: FlowingMenuTransitionManager) {
+  func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager) {
     performSegueWithIdentifier(PresentSegueName, sender: self)
   }
 
-  func flowingMenuTransitionManagerNeedsDismissMenu(transitionManager: FlowingMenuTransitionManager) {
+  func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager) {
     menu?.performSegueWithIdentifier(DismissSegueName, sender: self)
   }
 
