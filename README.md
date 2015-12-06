@@ -4,7 +4,9 @@
 
 FlowingMenu provides an interactive transition manager to display menu with a flowing and bouncing effects.
 
-![FlowingMenu](http://yannickloriot.com/resources/flowingmenu.gif)
+<p align="center">
+  <img src="http://yannickloriot.com/resources/flowingmenu.gif" alt="FlowingMenu" width="300"/>
+</p>
 
 ## Usage
 
