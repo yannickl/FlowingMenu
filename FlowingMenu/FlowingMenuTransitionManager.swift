@@ -65,9 +65,9 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   var interactive = false
 
   /// Control views aims to build the elastic shape.
-  var controlViews   = (0 ..< 8).map { _ in UIView() }
+  var controlViews = (0 ..< 8).map { _ in UIView() }
   /// Shaper layer used to draw the elastic view.
-  var shapeLayer     = CAShapeLayer()
+  var shapeLayer = CAShapeLayer()
   /// Mask to used to create the bubble effect.
   var shapeMaskLayer = CAShapeLayer()
   /// The display link used to create the bouncing effect.
@@ -90,7 +90,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   /// Present menu animation.
   func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: NSTimeInterval, completion: () -> Void) {
     // Composing the view
-    let ov = otherView.snapshotViewAfterScreenUpdates(true)
+    let ov              = otherView.snapshotViewAfterScreenUpdates(true)
     ov.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 
     containerView.addSubview(ov)
@@ -155,7 +155,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       menuView.frame     = menuFrame
       otherView.alpha    = 0
       ov.alpha           = 0.4
-      }) { finished in
+      }) { _ in
         if self.interactive && !status.transitionWasCancelled() {
           self.interactive = false
 
@@ -175,7 +175,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
           anim.fillMode            = kCAFillModeForwards
           self.shapeMaskLayer.addAnimation(anim, forKey: "bubbleAnim")
 
-          UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: { () -> Void in
+          UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
             for view in self.controlViews {
               view.center.x = menuWidth
             }
@@ -211,7 +211,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     otherView.alpha = 0
     ov.alpha        = 0.4
 
-    UIView.animateWithDuration(duration, delay: 0, options: [.CurveEaseOut], animations: { () -> Void in
+    UIView.animateWithDuration(duration, delay: 0, options: [.CurveEaseOut], animations: {
       menuFrame.origin.x = -menuFrame.width
       menuView.frame     = menuFrame
 
