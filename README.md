@@ -30,10 +30,15 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 If you want interactive transition you will need to implement the `FlowingMenuDelegate` methods and defines the views which will interact with the gestures:
 
 ```swift
+var menu: UIViewController?
+
 override func viewDidLoad() {
   super.viewDidLoad()
 
+  // Add the pan screen edge gesture to the current view
   flowingMenuTransitionManager.setInteractivePresentationView(view)
+  
+  // Add the delegate to respond to interactive transition events
   flowingMenuTransitionManager.delegate = self
 }
 
@@ -41,17 +46,21 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
   let vc                   = segue.destinationViewController
   vc.transitioningDelegate = flowingMenuTransitionManager
 
+  // Add the left pan gesture to the menu
   flowingMenuTransitionManager.setInteractiveDismissView(vc.view)
+  
+  // Keep a reference of the current menu
+  menu = vc
 }
 
 // MARK: - FlowingMenu Delegate Methods
 
-func flowingMenuTransitionManagerNeedsPresentMenu(transitionManager: FlowingMenuTransitionManager) {
-  performSegueWithIdentifier(PresentSegueName, sender: self)
+func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager) {
+  performSegueWithIdentifier("PresentSegueName", sender: self)
 }
 
-func flowingMenuTransitionManagerNeedsDismissMenu(transitionManager: FlowingMenuTransitionManager) {
-  menu?.performSegueWithIdentifier(DismissSegueName, sender: self)
+func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager) {
+  menu?.performSegueWithIdentifier("DismissSegueName", sender: self)
 }
 ```
 
