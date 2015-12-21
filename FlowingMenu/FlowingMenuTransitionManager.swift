@@ -1,28 +1,28 @@
 /*
- * FlowingMenu
- *
- * Copyright 2015-present Yannick Loriot.
- * http://yannickloriot.com
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- */
+* FlowingMenu
+*
+* Copyright 2015-present Yannick Loriot.
+* http://yannickloriot.com
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*
+*/
 
 import UIKit
 import QuartzCore
@@ -31,10 +31,10 @@ import QuartzCore
  The `FlowingMenuTransitionManager` is a concrete subclass of
  `UIPercentDrivenInteractiveTransition` which aims to drive the transition between
  two views by providing an flowing/elastic and bouncing animation effect.
- 
+
  You must adopt the `FlowingMenuDelegate` if you want to make the transition
  interactive.
-*/
+ */
 public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTransition {
   // MARK: - Specifying the Delegate
 
@@ -65,11 +65,11 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   var interactive = false
 
   /// Control views aims to build the elastic shape.
-  var controlViews = (0 ..< 8).map { _ in UIView() }
+  let controlViews = (0 ..< 8).map { _ in UIView() }
   /// Shaper layer used to draw the elastic view.
-  var shapeLayer = CAShapeLayer()
+  let shapeLayer = CAShapeLayer()
   /// Mask to used to create the bubble effect.
-  var shapeMaskLayer = CAShapeLayer()
+  let shapeMaskLayer = CAShapeLayer()
   /// The display link used to create the bouncing effect.
   lazy var displayLink: CADisplayLink = {
     let displayLink    = CADisplayLink(target: self, selector: Selector("updateShapeLayer"))
@@ -86,7 +86,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   }
 
   // MARK: - Working with Animations
-  
+
   /// Present menu animation.
   func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: NSTimeInterval, completion: () -> Void) {
     // Composing the view
@@ -132,23 +132,33 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       maskLayer.addAnimation(bubbleAnim, forKey: "bubbleAnim")
     }
     else {
-      for view in controlViews {
-        view.removeFromSuperview()
-        menuView.addSubview(view)
-      }
-
+      // Last control points help us to know the menu height
       controlViews[7].center = CGPoint(x: 0, y: menuView.bounds.height)
 
+      // Be sure there is no animation running
       shapeMaskLayer.removeAllAnimations()
 
+      // Retrieve the shape color
       let shapeColor = source.colorOfElasticShapeInFlowingMenu(self) ?? menuView.backgroundColor ?? .blackColor()
       shapeMaskLayer.path        = UIBezierPath(rect: ov.bounds).CGPath
+      shapeLayer.actions         = ["position" : NSNull(), "bounds" : NSNull(), "path" : NSNull()]
       shapeLayer.backgroundColor = shapeColor.CGColor
       shapeLayer.fillColor       = shapeColor.CGColor
-      shapeLayer.mask            = shapeMaskLayer
 
+      // Add the mask to create the bubble effect
+      shapeLayer.mask = shapeMaskLayer
+
+      // Add the shape layer to container view
       containerView.layer.addSublayer(shapeLayer)
+
+      // If the container view change, we update the control points parent
+      for view in controlViews {
+        view.removeFromSuperview()
+        containerView.addSubview(view)
+      }
     }
+
+    containerView.userInteractionEnabled = false
 
     UIView.animateWithDuration(duration, animations: { _ in
       menuFrame.origin.x = 0
@@ -158,6 +168,8 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       }) { _ in
         if self.interactive && !status.transitionWasCancelled() {
           self.interactive = false
+
+
 
           let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
           bubbleAnim.values              = [beginRect, middleRect, endRect].map { UIBezierPath(ovalInRect: $0).CGPath }
@@ -182,6 +194,8 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
             }, completion: { _ in
               self.shapeLayer.removeFromSuperlayer()
 
+              containerView.userInteractionEnabled = true
+
               menuView.layer.mask = nil
               self.animating      = false
 
@@ -191,6 +205,8 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
         else {
           menuView.layer.mask = nil
           self.animating      = false
+
+          containerView.userInteractionEnabled = true
 
           completion()
         }
@@ -214,7 +230,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     UIView.animateWithDuration(duration, delay: 0, options: [.CurveEaseOut], animations: {
       menuFrame.origin.x = -menuFrame.width
       menuView.frame     = menuFrame
-
+      
       otherView.alpha = 1
       ov.alpha        = 1
       }) { _ in

@@ -77,6 +77,7 @@ extension FlowingMenuTransitionManager {
     case .Began:
       interactive = true
 
+      // Asking the delegate the present the menu
       delegate?.flowingMenuNeedsPresentMenu(self)
 
       fallthrough
@@ -86,8 +87,10 @@ extension FlowingMenuTransitionManager {
       let waveWidth = translation.x * 0.9
       let left      = waveWidth * 0.1
 
+      // Update the control points
       moveControlViewsToPoint(CGPoint(x: left, y: yLocation), waveWidth: waveWidth)
 
+      // Update the shape layer
       updateShapeLayer()
     default:
       animating = true
