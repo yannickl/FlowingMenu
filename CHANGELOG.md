@@ -1,5 +1,9 @@
 # Change log
 
+## Version 0.3.0 (Under Dev)
+
+- [ADD] Tap to dismiss [#3](https://github.com/yannickl/FlowingMenu/issues/3)
+
 ## [Version 0.2.0](https://github.com/yannickl/FlowingMenu/releases/tag/0.2.0)
 Released on 2015-12-06.
 

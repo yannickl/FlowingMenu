@@ -33,7 +33,7 @@ extension FlowingMenuTransitionManager {
   /**
    Defines the given view as interactive to present the menu.
    
-   - parameter view: The view used to respond to the touch events.
+   - parameter view: The view used to respond to the gesture events.
   */
   public func setInteractivePresentationView(view: UIView) {
     let screenEdgePanGesture   = UIScreenEdgePanGestureRecognizer()
@@ -46,7 +46,7 @@ extension FlowingMenuTransitionManager {
   /**
    Defines the given view as interactive to dismiss the menu.
 
-   - parameter view: The view used to respond to the touch events.
+   - parameter view: The view used to respond to the gesture events.
    */
   public func setInteractiveDismissView(view: UIView) {
     let panGesture                    = UIPanGestureRecognizer()
@@ -54,6 +54,19 @@ extension FlowingMenuTransitionManager {
     panGesture.addTarget(self, action:"panToDismissAction:")
 
     view.addGestureRecognizer(panGesture)
+  }
+
+  /**
+   Add the tap gesture to the given view to dismiss it when a tap occurred.
+
+   - parameter view: The view used to respond to the gesture events.
+   */
+  func addTapGesture(view: UIView) {
+    let tapGesture                  = UITapGestureRecognizer()
+    tapGesture.numberOfTapsRequired = 1
+    tapGesture.addTarget(self, action: "tapToDismissAction:")
+
+    view.addGestureRecognizer(tapGesture)
   }
 
   // MARK: - Responding to Gesture Events
@@ -136,6 +149,16 @@ extension FlowingMenuTransitionManager {
         cancelInteractiveTransition()
       }
     }
+  }
+
+  /**
+   The tap gesture recognizer action methods. It is used to dismiss the
+   menu.
+
+   - parameter tapGesture: The `UITapGestureRecognizer` sender object.
+   */
+  func tapToDismissAction(tapGesture: UITapGestureRecognizer) {
+    delegate?.flowingMenuNeedsDismissMenu(self)
   }
 
   // MARK: - Building Paths
