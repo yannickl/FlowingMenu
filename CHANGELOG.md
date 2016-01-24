@@ -1,8 +1,10 @@
 # Change log
 
-## Version 0.3.0 (Under Dev)
+## [Version 0.3.0](https://github.com/yannickl/FlowingMenu/releases/tag/0.3.0)
+Released on 2016-01-24.
 
 - [ADD] Tap to dismiss [#3](https://github.com/yannickl/FlowingMenu/issues/3)
+- [FIX] Bug when Slide left to close [#5](https://github.com/yannickl/FlowingMenu/issues/5)
 
 ## [Version 0.2.0](https://github.com/yannickl/FlowingMenu/releases/tag/0.2.0)
 Released on 2015-12-06.
