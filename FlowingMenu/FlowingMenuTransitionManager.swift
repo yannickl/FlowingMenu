@@ -172,8 +172,6 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
         if self.interactive && !status.transitionWasCancelled() {
           self.interactive = false
 
-
-
           let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
           bubbleAnim.values              = [beginRect, middleRect, endRect].map { UIBezierPath(ovalInRect: $0).CGPath }
           bubbleAnim.keyTimes            = [0, 0.4, 1]

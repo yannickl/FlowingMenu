@@ -109,6 +109,8 @@ extension FlowingMenuTransitionManager {
       animating = true
 
       if percentage < 1 {
+        interactive = false
+        
         moveControlViewsToPoint(CGPoint(x: 0, y: yLocation), waveWidth: 0)
         
         cancelInteractiveTransition()
