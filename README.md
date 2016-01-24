@@ -37,7 +37,7 @@ override func viewDidLoad() {
 
   // Add the pan screen edge gesture to the current view
   flowingMenuTransitionManager.setInteractivePresentationView(view)
-  
+
   // Add the delegate to respond to interactive transition events
   flowingMenuTransitionManager.delegate = self
 }
@@ -48,7 +48,7 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
   // Add the left pan gesture to the menu
   flowingMenuTransitionManager.setInteractiveDismissView(vc.view)
-  
+
   // Keep a reference of the current menu
   menu = vc
 }
@@ -92,7 +92,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'FlowingMenu', '~> 0.2.0'
+pod 'FlowingMenu', '~> 0.3.0'
 ```
 
 Install into your project:
@@ -123,7 +123,7 @@ $ brew install carthage
 To integrate `FlowingMenu` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/FlowingMenu" >= 0.2.0
+github "yannickl/FlowingMenu" >= 0.3.0
 ```
 
 #### Manually
