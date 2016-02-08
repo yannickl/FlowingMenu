@@ -1,6 +1,6 @@
 # FlowingMenu
 
-[![License](https://cocoapod-badges.herokuapp.com/l/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Version](https://cocoapod-badges.herokuapp.com/v/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/FlowingMenu.svg?branch=master)](https://travis-ci.org/yannickl/Splitflap) [![codecov.io](http://codecov.io/github/yannickl/FlowingMenu/coverage.svg?branch=master)](http://codecov.io/github/yannickl/FlowingMenu?branch=master)
+[![License](https://cocoapod-badges.herokuapp.com/l/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Version](https://cocoapod-badges.herokuapp.com/v/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/FlowingMenu.svg?branch=master)](https://travis-ci.org/yannickl/FlowingMenu) [![codecov.io](http://codecov.io/github/yannickl/FlowingMenu/coverage.svg?branch=master)](http://codecov.io/github/yannickl/FlowingMenu?branch=master)
 
 FlowingMenu provides an interactive transition manager to display menu with a flowing and bouncing effects.
 
@@ -82,7 +82,7 @@ Install CocoaPods if not already available:
 $ [sudo] gem install cocoapods
 $ pod setup
 ```
-Go to the directory of your Xcode project, and Create and Edit your Podfile and add _Splitflap_:
+Go to the directory of your Xcode project, and Create and Edit your Podfile and add _FlowingMenu_:
 
 ``` bash
 $ cd /path/to/MyProject
@@ -128,7 +128,7 @@ github "yannickl/FlowingMenu" >= 0.3.0
 
 #### Manually
 
-[Download](https://github.com/YannickL/FlowingMenu/archive/master.zip) the project and copy the `Splitflap` folder into your project to use it in.
+[Download](https://github.com/YannickL/FlowingMenu/archive/master.zip) the project and copy the `FlowingMenu` folder into your project to use it in.
 
 ## Contact
 
