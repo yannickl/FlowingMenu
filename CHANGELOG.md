@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.0.0](https://github.com/yannickl/FlowingMenu/releases/tag/1.0.0)
+Released on 2016-03-01.
+
+- [ADD] Swift Package Manager support
+
 ## [Version 0.3.0](https://github.com/yannickl/FlowingMenu/releases/tag/0.3.0)
 Released on 2016-01-24.
 

@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
 
     flowingMenuTransitionManager.setInteractivePresentationView(view)
     flowingMenuTransitionManager.delegate = self
-    
+
     topBar.tintColor              = .whiteColor()
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     cell.avatarImageView.image = user.avatarImage()
 
     cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? derivatedColor : mainColor
-
+    
     return cell
   }
 }

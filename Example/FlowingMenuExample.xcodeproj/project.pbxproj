@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEACBD2C1C8635BC00193E0E /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD241C8635BC00193E0E /* FlowingMenuDelegate.swift */; };
+		CEACBD2D1C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD251C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CEACBD2E1C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD261C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		CEACBD2F1C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD271C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		CEACBD301C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD281C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CEACBD311C8635BC00193E0E /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD291C8635BC00193E0E /* FlowingMenuTransitionManager.swift */; };
+		CEACBD321C8635BC00193E0E /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2A1C8635BC00193E0E /* FlowingMenuTransitionStatus.swift */; };
+		CEACBD331C8635BC00193E0E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2B1C8635BC00193E0E /* UIView.swift */; };
+		CEACBD341C8635C500193E0E /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD241C8635BC00193E0E /* FlowingMenuDelegate.swift */; };
+		CEACBD351C8635C500193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD251C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CEACBD361C8635C500193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD261C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		CEACBD371C8635C500193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD271C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		CEACBD381C8635C500193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD281C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CEACBD391C8635C500193E0E /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD291C8635BC00193E0E /* FlowingMenuTransitionManager.swift */; };
+		CEACBD3A1C8635C500193E0E /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2A1C8635BC00193E0E /* FlowingMenuTransitionStatus.swift */; };
+		CEACBD3B1C8635C500193E0E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2B1C8635BC00193E0E /* UIView.swift */; };
+		CEACBD3C1C8635C600193E0E /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD241C8635BC00193E0E /* FlowingMenuDelegate.swift */; };
+		CEACBD3D1C8635C600193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD251C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CEACBD3E1C8635C600193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD261C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		CEACBD3F1C8635C600193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD271C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		CEACBD401C8635C600193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD281C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CEACBD411C8635C600193E0E /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD291C8635BC00193E0E /* FlowingMenuTransitionManager.swift */; };
+		CEACBD421C8635C600193E0E /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2A1C8635BC00193E0E /* FlowingMenuTransitionStatus.swift */; };
+		CEACBD431C8635C600193E0E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2B1C8635BC00193E0E /* UIView.swift */; };
+		CEACBD441C8635C700193E0E /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD241C8635BC00193E0E /* FlowingMenuDelegate.swift */; };
+		CEACBD451C8635C700193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD251C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift */; };
+		CEACBD461C8635C700193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD261C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		CEACBD471C8635C700193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD271C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		CEACBD481C8635C700193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD281C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		CEACBD491C8635C700193E0E /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD291C8635BC00193E0E /* FlowingMenuTransitionManager.swift */; };
+		CEACBD4A1C8635C700193E0E /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2A1C8635BC00193E0E /* FlowingMenuTransitionStatus.swift */; };
+		CEACBD4B1C8635C700193E0E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD2B1C8635BC00193E0E /* UIView.swift */; };
 		CECF53C61C0F86DD00DF6B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53C51C0F86DD00DF6B92 /* AppDelegate.swift */; };
 		CECF53C81C0F86DD00DF6B92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53C71C0F86DD00DF6B92 /* ViewController.swift */; };
 		CECF53CB1C0F86DD00DF6B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECF53C91C0F86DD00DF6B92 /* Main.storyboard */; };
@@ -15,50 +47,18 @@
 		CECF53E01C0F92D400DF6B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53DF1C0F92D400DF6B92 /* User.swift */; };
 		CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53E41C10403D00DF6B92 /* UIColor.swift */; };
 		CECF53EA1C10469700DF6B92 /* UserContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53E91C10469700DF6B92 /* UserContactCellView.swift */; };
-		CECF53EC1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
-		CECF53EE1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
 		CECF53F01C10595E00DF6B92 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */; };
 		CECF53F21C10886B00DF6B92 /* UserChatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */; };
-		CECF53F41C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
-		CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
-		CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
-		CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
-		CECF53FE1C1193A700DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
 		CECF54061C11A6C600DF6B92 /* FlowingMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF54051C11A6C600DF6B92 /* FlowingMenuUITests.swift */; };
 		CECF54141C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF54131C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift */; };
 		CECF541C1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF541B1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift */; };
-		CECF541D1C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
-		CECF541E1C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
-		CECF541F1C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
-		CECF54201C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
-		CECF54211C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
-		CECF54221C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
-		CECF54231C11AC5400DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
-		CECF54241C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
-		CECF54251C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
-		CECF54261C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
-		CECF54271C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
-		CECF54281C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
-		CECF54291C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
-		CECF542A1C11AC5400DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
 		CECF542C1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF542B1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift */; };
 		CECF54351C11B5C400DF6B92 /* FlowingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = CECF54341C11B5C400DF6B92 /* FlowingMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECF54391C11B5C400DF6B92 /* FlowingMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECF54321C11B5C400DF6B92 /* FlowingMenu.framework */; };
 		CECF543A1C11B5C400DF6B92 /* FlowingMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECF54321C11B5C400DF6B92 /* FlowingMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CECF543F1C11B5D400DF6B92 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */; };
-		CECF54401C11B5D400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */; };
-		CECF54411C11B5D400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */; };
-		CECF54421C11B5D400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
-		CECF54431C11B5D400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
-		CECF54441C11B5D400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
-		CECF54451C11B5D400DF6B92 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53FD1C1193A700DF6B92 /* UIView.swift */; };
 		CECF54471C11C43900DF6B92 /* FlowingMenuTransitioningDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF54461C11C43900DF6B92 /* FlowingMenuTransitioningDelegateTests.swift */; };
 		CECF54491C11C68700DF6B92 /* FlowingMenuAnimatedTransitioningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF54481C11C68700DF6B92 /* FlowingMenuAnimatedTransitioningTests.swift */; };
 		CECF544B1C11C83600DF6B92 /* FlowingMenuDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF544A1C11C83600DF6B92 /* FlowingMenuDelegateTests.swift */; };
-		CECF544D1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF544C1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift */; };
-		CECF544E1C11E6A800DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF544C1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift */; };
-		CECF544F1C11E6A800DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF544C1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift */; };
-		CECF54501C11E6A800DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF544C1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +100,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CEACBD241C8635BC00193E0E /* FlowingMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuDelegate.swift; sourceTree = "<group>"; };
+		CEACBD251C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+Delegate.swift"; sourceTree = "<group>"; };
+		CEACBD261C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
+		CEACBD271C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift"; sourceTree = "<group>"; };
+		CEACBD281C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		CEACBD291C8635BC00193E0E /* FlowingMenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitionManager.swift; sourceTree = "<group>"; };
+		CEACBD2A1C8635BC00193E0E /* FlowingMenuTransitionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitionStatus.swift; sourceTree = "<group>"; };
+		CEACBD2B1C8635BC00193E0E /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CECF53C21C0F86DD00DF6B92 /* FlowingMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowingMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF53C51C0F86DD00DF6B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECF53C71C0F86DD00DF6B92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,15 +118,8 @@
 		CECF53DF1C0F92D400DF6B92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CECF53E41C10403D00DF6B92 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CECF53E91C10469700DF6B92 /* UserContactCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContactCellView.swift; sourceTree = "<group>"; };
-		CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitionManager.swift; sourceTree = "<group>"; };
-		CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		CECF53EF1C10595E00DF6B92 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CECF53F11C10886B00DF6B92 /* UserChatCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserChatCellView.swift; sourceTree = "<group>"; };
-		CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift"; sourceTree = "<group>"; };
-		CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
-		CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuDelegate.swift; sourceTree = "<group>"; };
-		CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlowingMenuTransitionManager+Delegate.swift"; sourceTree = "<group>"; };
-		CECF53FD1C1193A700DF6B92 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CECF54031C11A6C600DF6B92 /* FlowingMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowingMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECF54051C11A6C600DF6B92 /* FlowingMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingMenuUITests.swift; sourceTree = "<group>"; };
 		CECF54071C11A6C600DF6B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 		CECF54461C11C43900DF6B92 /* FlowingMenuTransitioningDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitioningDelegateTests.swift; sourceTree = "<group>"; };
 		CECF54481C11C68700DF6B92 /* FlowingMenuAnimatedTransitioningTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuAnimatedTransitioningTests.swift; sourceTree = "<group>"; };
 		CECF544A1C11C83600DF6B92 /* FlowingMenuDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuDelegateTests.swift; sourceTree = "<group>"; };
-		CECF544C1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowingMenuTransitionStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,10 +169,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEACBD231C8635BC00193E0E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CEACBD241C8635BC00193E0E /* FlowingMenuDelegate.swift */,
+				CEACBD251C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift */,
+				CEACBD261C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */,
+				CEACBD271C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */,
+				CEACBD281C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */,
+				CEACBD291C8635BC00193E0E /* FlowingMenuTransitionManager.swift */,
+				CEACBD2A1C8635BC00193E0E /* FlowingMenuTransitionStatus.swift */,
+				CEACBD2B1C8635BC00193E0E /* UIView.swift */,
+			);
+			name = Sources;
+			path = ../Sources;
+			sourceTree = "<group>";
+		};
 		CECF53B91C0F86DD00DF6B92 = {
 			isa = PBXGroup;
 			children = (
-				CECF53D91C0F876D00DF6B92 /* FlowingMenu */,
+				CEACBD231C8635BC00193E0E /* Sources */,
 				CECF53C41C0F86DD00DF6B92 /* FlowingMenuExample */,
 				CECF54121C11AB2D00DF6B92 /* FlowingMenuTests */,
 				CECF54041C11A6C600DF6B92 /* FlowingMenuUITests */,
@@ -207,22 +223,6 @@
 				CECF53D11C0F86DD00DF6B92 /* Info.plist */,
 			);
 			path = FlowingMenuExample;
-			sourceTree = "<group>";
-		};
-		CECF53D91C0F876D00DF6B92 /* FlowingMenu */ = {
-			isa = PBXGroup;
-			children = (
-				CECF53F91C109B0600DF6B92 /* FlowingMenuDelegate.swift */,
-				CECF53EB1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift */,
-				CECF53FB1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift */,
-				CECF53F71C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */,
-				CECF53F31C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */,
-				CECF53ED1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */,
-				CECF544C1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift */,
-				CECF53FD1C1193A700DF6B92 /* UIView.swift */,
-			);
-			name = FlowingMenu;
-			path = ../FlowingMenu;
 			sourceTree = "<group>";
 		};
 		CECF53DE1C0F92D400DF6B92 /* model */ = {
@@ -455,21 +455,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF53EE1C104CAC00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
 				CECF53F21C10886B00DF6B92 /* UserChatCellView.swift in Sources */,
-				CECF53F41C10911C00DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
 				CECF53E01C0F92D400DF6B92 /* User.swift in Sources */,
+				CEACBD321C8635BC00193E0E /* FlowingMenuTransitionStatus.swift in Sources */,
+				CEACBD2F1C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				CEACBD2C1C8635BC00193E0E /* FlowingMenuDelegate.swift in Sources */,
+				CEACBD301C8635BC00193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
 				CECF53C81C0F86DD00DF6B92 /* ViewController.swift in Sources */,
 				CECF53EA1C10469700DF6B92 /* UserContactCellView.swift in Sources */,
 				CECF53F01C10595E00DF6B92 /* MenuViewController.swift in Sources */,
-				CECF544E1C11E6A800DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */,
+				CEACBD2D1C8635BC00193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
+				CEACBD331C8635BC00193E0E /* UIView.swift in Sources */,
 				CECF53C61C0F86DD00DF6B92 /* AppDelegate.swift in Sources */,
-				CECF53EC1C104AD800DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
-				CECF53F81C10943F00DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
-				CECF53FE1C1193A700DF6B92 /* UIView.swift in Sources */,
+				CEACBD2E1C8635BC00193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CEACBD311C8635BC00193E0E /* FlowingMenuTransitionManager.swift in Sources */,
 				CECF53E51C10403D00DF6B92 /* UIColor.swift in Sources */,
-				CECF53FC1C10F17500DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
-				CECF53FA1C109B0600DF6B92 /* FlowingMenuDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,14 +477,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF542A1C11AC5400DF6B92 /* UIView.swift in Sources */,
-				CECF54251C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
-				CECF54261C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
-				CECF54281C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
-				CECF54501C11E6A800DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */,
-				CECF54291C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
-				CECF54241C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */,
-				CECF54271C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CEACBD471C8635C700193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				CEACBD451C8635C700193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
+				CEACBD4A1C8635C700193E0E /* FlowingMenuTransitionStatus.swift in Sources */,
+				CEACBD441C8635C700193E0E /* FlowingMenuDelegate.swift in Sources */,
+				CEACBD461C8635C700193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CEACBD491C8635C700193E0E /* FlowingMenuTransitionManager.swift in Sources */,
+				CEACBD481C8635C700193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				CEACBD4B1C8635C700193E0E /* UIView.swift in Sources */,
 				CECF54061C11A6C600DF6B92 /* FlowingMenuUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,20 +493,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF54221C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				CEACBD3F1C8635C600193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				CEACBD421C8635C600193E0E /* FlowingMenuTransitionStatus.swift in Sources */,
 				CECF54471C11C43900DF6B92 /* FlowingMenuTransitioningDelegateTests.swift in Sources */,
-				CECF541D1C11AC5400DF6B92 /* FlowingMenuDelegate.swift in Sources */,
+				CEACBD3E1C8635C600193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CEACBD3C1C8635C600193E0E /* FlowingMenuDelegate.swift in Sources */,
 				CECF54141C11AB2D00DF6B92 /* FlowingMenuUIGestureRecognizerTests.swift in Sources */,
-				CECF541E1C11AC5400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
 				CECF544B1C11C83600DF6B92 /* FlowingMenuDelegateTests.swift in Sources */,
-				CECF544D1C11E50000DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */,
+				CEACBD411C8635C600193E0E /* FlowingMenuTransitionManager.swift in Sources */,
 				CECF542C1C11B39400DF6B92 /* FlowingMenuTransitionManagerTests.swift in Sources */,
+				CEACBD3D1C8635C600193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
+				CEACBD431C8635C600193E0E /* UIView.swift in Sources */,
+				CEACBD401C8635C600193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
 				CECF541C1C11AB8F00DF6B92 /* XCTTestCaseTemplate.swift in Sources */,
-				CECF54211C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
 				CECF54491C11C68700DF6B92 /* FlowingMenuAnimatedTransitioningTests.swift in Sources */,
-				CECF54201C11AC5400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
-				CECF54231C11AC5400DF6B92 /* UIView.swift in Sources */,
-				CECF541F1C11AC5400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,14 +514,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF54431C11B5D400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
-				CECF54411C11B5D400DF6B92 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
-				CECF544F1C11E6A800DF6B92 /* FlowingMenuTransitionStatus.swift in Sources */,
-				CECF54401C11B5D400DF6B92 /* FlowingMenuTransitionManager.swift in Sources */,
-				CECF54451C11B5D400DF6B92 /* UIView.swift in Sources */,
-				CECF54421C11B5D400DF6B92 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
-				CECF54441C11B5D400DF6B92 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
-				CECF543F1C11B5D400DF6B92 /* FlowingMenuDelegate.swift in Sources */,
+				CEACBD3B1C8635C500193E0E /* UIView.swift in Sources */,
+				CEACBD391C8635C500193E0E /* FlowingMenuTransitionManager.swift in Sources */,
+				CEACBD371C8635C500193E0E /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				CEACBD3A1C8635C500193E0E /* FlowingMenuTransitionStatus.swift in Sources */,
+				CEACBD341C8635C500193E0E /* FlowingMenuDelegate.swift in Sources */,
+				CEACBD381C8635C500193E0E /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				CEACBD361C8635C500193E0E /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				CEACBD351C8635C500193E0E /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
