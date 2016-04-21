@@ -72,7 +72,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   let shapeMaskLayer = CAShapeLayer()
   /// The display link used to create the bouncing effect.
   lazy var displayLink: CADisplayLink = {
-    let displayLink    = CADisplayLink(target: self, selector: Selector("updateShapeLayer"))
+    let displayLink    = CADisplayLink(target: self, selector: #selector(FlowingMenuTransitionManager.updateShapeLayer))
     displayLink.paused = true
     displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
 
