@@ -38,7 +38,7 @@ extension FlowingMenuTransitionManager {
   public func setInteractivePresentationView(view: UIView) {
     let screenEdgePanGesture   = UIScreenEdgePanGestureRecognizer()
     screenEdgePanGesture.edges = .Left
-    screenEdgePanGesture.addTarget(self, action:"panToPresentAction:")
+    screenEdgePanGesture.addTarget(self, action:#selector(FlowingMenuTransitionManager.panToPresentAction(_:)))
 
     view.addGestureRecognizer(screenEdgePanGesture)
   }
@@ -51,7 +51,7 @@ extension FlowingMenuTransitionManager {
   public func setInteractiveDismissView(view: UIView) {
     let panGesture                    = UIPanGestureRecognizer()
     panGesture.maximumNumberOfTouches = 1
-    panGesture.addTarget(self, action:"panToDismissAction:")
+    panGesture.addTarget(self, action:#selector(FlowingMenuTransitionManager.panToDismissAction(_:)))
 
     view.addGestureRecognizer(panGesture)
   }
@@ -64,7 +64,7 @@ extension FlowingMenuTransitionManager {
   func addTapGesture(view: UIView) {
     let tapGesture                  = UITapGestureRecognizer()
     tapGesture.numberOfTapsRequired = 1
-    tapGesture.addTarget(self, action: "tapToDismissAction:")
+    tapGesture.addTarget(self, action: #selector(FlowingMenuTransitionManager.tapToDismissAction(_:)))
 
     view.addGestureRecognizer(tapGesture)
   }
