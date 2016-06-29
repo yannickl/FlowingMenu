@@ -35,9 +35,9 @@ extension FlowingMenuTransitionManager {
    
    - parameter view: The view used to respond to the gesture events.
   */
-  public func setInteractivePresentationView(view: UIView) {
+  public func setInteractivePresentationView(_ view: UIView) {
     let screenEdgePanGesture   = UIScreenEdgePanGestureRecognizer()
-    screenEdgePanGesture.edges = .Left
+    screenEdgePanGesture.edges = .left
     screenEdgePanGesture.addTarget(self, action:#selector(FlowingMenuTransitionManager.panToPresentAction(_:)))
 
     view.addGestureRecognizer(screenEdgePanGesture)
@@ -48,7 +48,7 @@ extension FlowingMenuTransitionManager {
 
    - parameter view: The view used to respond to the gesture events.
    */
-  public func setInteractiveDismissView(view: UIView) {
+  public func setInteractiveDismissView(_ view: UIView) {
     let panGesture                    = UIPanGestureRecognizer()
     panGesture.maximumNumberOfTouches = 1
     panGesture.addTarget(self, action:#selector(FlowingMenuTransitionManager.panToDismissAction(_:)))
@@ -61,7 +61,7 @@ extension FlowingMenuTransitionManager {
 
    - parameter view: The view used to respond to the gesture events.
    */
-  func addTapGesture(view: UIView) {
+  func addTapGesture(_ view: UIView) {
     let tapGesture                  = UITapGestureRecognizer()
     tapGesture.numberOfTapsRequired = 1
     tapGesture.addTarget(self, action: #selector(FlowingMenuTransitionManager.tapToDismissAction(_:)))
@@ -78,24 +78,24 @@ extension FlowingMenuTransitionManager {
     - parameter panGesture: The `UIScreenEdgePanGestureRecognizer` sender
     object.
   */
-  func panToPresentAction(panGesture: UIScreenEdgePanGestureRecognizer) {
+  func panToPresentAction(_ panGesture: UIScreenEdgePanGestureRecognizer) {
     let view        = panGesture.view!
-    let translation = panGesture.translationInView(view)
+    let translation = panGesture.translation(in: view)
     let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
 
-    let yLocation  = panGesture.locationInView(panGesture.view).y
+    let yLocation  = panGesture.location(in: panGesture.view).y
     let percentage = min(max(translation.x / (menuWidth / 2), 0), 1)
 
     switch panGesture.state {
-    case .Began:
+    case .began:
       interactive = true
 
       // Asking the delegate the present the menu
       delegate?.flowingMenuNeedsPresentMenu(self)
 
       fallthrough
-    case .Changed:
-      updateInteractiveTransition(percentage)
+    case .changed:
+      update(percentage)
 
       let waveWidth = translation.x * 0.9
       let left      = waveWidth * 0.1
@@ -113,10 +113,10 @@ extension FlowingMenuTransitionManager {
         
         moveControlViewsToPoint(CGPoint(x: 0, y: yLocation), waveWidth: 0)
         
-        cancelInteractiveTransition()
+        cancel()
       }
       else {
-        finishInteractiveTransition()
+        finish()
       }
     }
   }
@@ -127,28 +127,28 @@ extension FlowingMenuTransitionManager {
 
    - parameter panGesture: The `UIPanGestureRecognizer` sender object.
    */
-  func panToDismissAction(panGesture: UIPanGestureRecognizer) {
+  func panToDismissAction(_ panGesture: UIPanGestureRecognizer) {
     let view        = panGesture.view!
-    let translation = panGesture.translationInView(view)
+    let translation = panGesture.translation(in: view)
     let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
     
     let percentage = min(max(translation.x / menuWidth * -1, 0), 1)
 
     switch panGesture.state {
-    case .Began:
+    case .began:
       interactive = true
 
       delegate?.flowingMenuNeedsDismissMenu(self)
-    case .Changed:
-      updateInteractiveTransition(percentage)
+    case .changed:
+      update(percentage)
     default:
       interactive = false
 
       if percentage > 0.2 {
-        finishInteractiveTransition()
+        finish()
       }
       else {
-        cancelInteractiveTransition()
+        cancel()
       }
     }
   }
@@ -159,7 +159,7 @@ extension FlowingMenuTransitionManager {
 
    - parameter tapGesture: The `UITapGestureRecognizer` sender object.
    */
-  func tapToDismissAction(tapGesture: UITapGestureRecognizer) {
+  func tapToDismissAction(_ tapGesture: UITapGestureRecognizer) {
     delegate?.flowingMenuNeedsDismissMenu(self)
   }
 
@@ -173,16 +173,16 @@ extension FlowingMenuTransitionManager {
   func currentPath() -> CGPath {
     let bezierPath = UIBezierPath()
 
-    bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
-    bezierPath.addLineToPoint(CGPoint(x: controlViews[0].center(animating).x, y: 0))
-    bezierPath.addCurveToPoint(controlViews[2].center(animating), controlPoint1: controlViews[0].center(animating), controlPoint2: controlViews[1].center(animating))
-    bezierPath.addCurveToPoint(controlViews[4].center(animating), controlPoint1: controlViews[3].center(animating), controlPoint2: controlViews[4].center(animating))
-    bezierPath.addCurveToPoint(controlViews[6].center(animating), controlPoint1: controlViews[4].center(animating), controlPoint2: controlViews[5].center(animating))
-    bezierPath.addLineToPoint(CGPoint(x: 0, y: controlViews[7].center.y))
+    bezierPath.move(to: CGPoint(x: 0, y: 0))
+    bezierPath.addLine(to: CGPoint(x: controlViews[0].center(animating).x, y: 0))
+    bezierPath.addCurve(to: controlViews[2].center(animating), controlPoint1: controlViews[0].center(animating), controlPoint2: controlViews[1].center(animating))
+    bezierPath.addCurve(to: controlViews[4].center(animating), controlPoint1: controlViews[3].center(animating), controlPoint2: controlViews[4].center(animating))
+    bezierPath.addCurve(to: controlViews[6].center(animating), controlPoint1: controlViews[4].center(animating), controlPoint2: controlViews[5].center(animating))
+    bezierPath.addLine(to: CGPoint(x: 0, y: controlViews[7].center.y))
 
-    bezierPath.closePath()
+    bezierPath.close()
 
-    return bezierPath.CGPath
+    return bezierPath.cgPath
   }
 
   // MARK: - Updating Shapes
@@ -198,7 +198,7 @@ extension FlowingMenuTransitionManager {
    - parameter position: The target position.
    - parameter waveWidth: The wave width in point.
   */
-  func moveControlViewsToPoint(position: CGPoint, waveWidth: CGFloat) {
+  func moveControlViewsToPoint(_ position: CGPoint, waveWidth: CGFloat) {
     let height     = controlViews[7].center.y
     let minTopY    = min((position.y - height / 2) * 0.28, 0)
     let maxBottomY = max(height + (position.y - height / 2) * 0.28, height)
