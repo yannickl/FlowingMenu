@@ -29,18 +29,18 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     flowingMenuTransitionManager.setInteractivePresentationView(view)
     flowingMenuTransitionManager.delegate = self
 
-    topBar.tintColor              = .whiteColor()
+    topBar.tintColor              = .white()
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
       NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!,
-      NSForegroundColorAttributeName: UIColor.whiteColor()]
+      NSForegroundColorAttributeName: UIColor.white()]
     userTableView.backgroundColor = mainColor
     view.backgroundColor          = mainColor
   }
 
   // MARK: - Interacting with Storyboards and Segues
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == PresentSegueName {
       let vc                   = segue.destinationViewController
       vc.transitioningDelegate = flowingMenuTransitionManager
@@ -51,44 +51,44 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     }
   }
 
-  @IBAction func unwindToMainViewController(sender: UIStoryboardSegue) {
+  @IBAction func unwindToMainViewController(_ sender: UIStoryboardSegue) {
   }
 
   // MARK: - Managing the Status Bar
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
+    return .lightContent
   }
 
   // MARK: - FlowingMenu Delegate Methods
 
-  func colorOfElasticShapeInFlowingMenu(flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
+  func colorOfElasticShapeInFlowingMenu(_ flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
     return mainColor
   }
 
-  func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager) {
-    performSegueWithIdentifier(PresentSegueName, sender: self)
+  func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
+    performSegue(withIdentifier: PresentSegueName, sender: self)
   }
 
-  func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager) {
-    menu?.performSegueWithIdentifier(DismissSegueName, sender: self)
+  func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
+    menu?.performSegue(withIdentifier: DismissSegueName, sender: self)
   }
 
   // MARK: - UITableView DataSource Methods
 
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return users.count
   }
 
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier(CellName) as! UserContactCellView
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: CellName) as! UserContactCellView
 
-    let user = users[indexPath.row]
+    let user = users[(indexPath as NSIndexPath).row]
 
     cell.displayNameLabel.text = user.displayName()
     cell.avatarImageView.image = user.avatarImage()
 
-    cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? derivatedColor : mainColor
+    cell.contentView.backgroundColor = (indexPath as NSIndexPath).row % 2 == 0 ? derivatedColor : mainColor
     
     return cell
   }
