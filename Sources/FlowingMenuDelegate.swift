@@ -43,7 +43,7 @@ public protocol FlowingMenuDelegate: class {
   - returns: The width of the menu view. Outside the menu view a black overlay 
   will be displayed.
   */
-  func flowingMenu(flowingMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat
+  func flowingMenu(_ flowingMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat
 
   // MARK: - Drawing the Elastic Shape
 
@@ -56,7 +56,7 @@ public protocol FlowingMenuDelegate: class {
   - returns: The shape color. If nil it will use the menu background color and
   if menu has no background color, the shape will be black.
   */
-  func colorOfElasticShapeInFlowingMenu(flowingMenu: FlowingMenuTransitionManager) -> UIColor?
+  func colorOfElasticShapeInFlowingMenu(_ flowingMenu: FlowingMenuTransitionManager) -> UIColor?
 
   // MARK: - Responding to Interactive Transition
 
@@ -68,7 +68,7 @@ public protocol FlowingMenuDelegate: class {
   - parameter flowingMenu: The flowing menu transition manager which needs
   present the menu.
   */
-  func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager)
+  func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager)
 
   /**
    Called by the flowing menu transition manager when the interactive transition
@@ -78,25 +78,25 @@ public protocol FlowingMenuDelegate: class {
    - parameter flowingMenu: The flowing menu transition manager which needs
    dismiss the menu.
    */
-  func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager)
+  func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager)
 }
 
 extension FlowingMenuDelegate {
   /// Returns the 2/3 menu view width.
-  public func flowingMenu(flowingMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
+  public func flowingMenu(_ flowingMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
     return menuView.bounds.width * 2 / 3
   }
 
   /// Use the menu background by default.
-  public func colorOfElasticShapeInFlowingMenu(flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
+  public func colorOfElasticShapeInFlowingMenu(_ flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
     return nil
   }
 
   /// You should implement this method to display the menu. By default nothing happens.
-  public func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager) {
+  public func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
   }
 
   /// You should implement this method to dismiss the menu. By default nothing happens.
-  public func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager) {
+  public func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
   }
 }
