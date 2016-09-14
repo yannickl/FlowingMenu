@@ -8,6 +8,8 @@ FlowingMenu provides an interactive transition manager to display menu with a fl
   <img src="http://yannickloriot.com/resources/flowingmenu.gif" alt="FlowingMenu" width="300"/>
 </p>
 
+*N.B. : This branch is Swift 2.3 compatible, use the [v1.0.2 version](https://github.com/yannickl/FlowingMenu/tree/1.0.2) for Swift 2.2.*
+
 ## Usage
 
 At first, import FlowingMenu
