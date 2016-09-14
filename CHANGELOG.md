@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.1.0](https://github.com/yannickl/FlowingMenu/releases/tag/1.1.0)
+Released on 2016-09-14.
+
+**Swift 2.3 supports**
+
 ## [Version 1.0.0](https://github.com/yannickl/FlowingMenu/releases/tag/1.0.0)
 Released on 2016-03-01.
 
