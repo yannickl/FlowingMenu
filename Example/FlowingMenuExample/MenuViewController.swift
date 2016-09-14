@@ -21,35 +21,36 @@ final class MenuViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    topBar.tintColor              = .blackColor()
+    topBar.tintColor              = .black
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
       NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!,
-      NSForegroundColorAttributeName: UIColor.blackColor()]
+      NSForegroundColorAttributeName: UIColor.black
+    ]
     userTableView.backgroundColor = mainColor
     view.backgroundColor          = mainColor
   }
 
   // MARK: - Managing the Status Bar
 
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
 
   // MARK: - UITableView DataSource Methods
 
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return users.count
   }
 
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier(CellName) as! UserChatCellView
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: CellName) as! UserChatCellView
 
-    let user = users[indexPath.row]
+    let user = users[(indexPath as NSIndexPath).row]
 
     cell.displayNameLabel.text = user.displayName()
     cell.avatarImageView.image = user.avatarImage()
-    cell.statusView.hidden     = !user.newMessage
+    cell.statusView.isHidden     = !user.newMessage
 
     cell.contentView.backgroundColor = mainColor
 

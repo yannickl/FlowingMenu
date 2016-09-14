@@ -8,7 +8,7 @@ FlowingMenu provides an interactive transition manager to display menu with a fl
   <img src="http://yannickloriot.com/resources/flowingmenu.gif" alt="FlowingMenu" width="300"/>
 </p>
 
-*N.B. : This branch is Swift 2.3 compatible, use the [v1.0.2 version](https://github.com/yannickl/FlowingMenu/tree/1.0.2) for Swift 2.2.*
+*N.B. : This branch is Swift 3 compatible, use the [v1.1.0 version](https://github.com/yannickl/FlowingMenu/tree/1.1.0) for Swift 2.3.*
 
 ## Usage
 
@@ -23,8 +23,8 @@ Then just add a `FlowingMenuTransitionManager` object that acts as `transitionin
 ```swift
 let flowingMenuTransitionManager = FlowingMenuTransitionManager()
 
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  let vc                   = segue.destinationViewController
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  let vc                   = segue.destination
   vc.transitioningDelegate = flowingMenuTransitionManager
 }
 ```
@@ -44,8 +44,8 @@ override func viewDidLoad() {
   flowingMenuTransitionManager.delegate = self
 }
 
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  let vc                   = segue.destinationViewController
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  let vc                   = segue.destination
   vc.transitioningDelegate = flowingMenuTransitionManager
 
   // Add the left pan gesture to the menu
@@ -57,12 +57,12 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
 // MARK: - FlowingMenu Delegate Methods
 
-func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager) {
-  performSegueWithIdentifier("PresentSegueName", sender: self)
+func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
+  performSegue(withIdentifier: "PresentSegueName", sender: self)
 }
 
-func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager) {
-  menu?.performSegueWithIdentifier("DismissSegueName", sender: self)
+func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
+  menu?.performSegue(withIdentifier: "DismissSegueName", sender: self)
 }
 ```
 
@@ -94,7 +94,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'FlowingMenu', '~> 1.1.0'
+pod 'FlowingMenu', '~> 2.0.0'
 ```
 
 Install into your project:
@@ -125,7 +125,7 @@ $ brew install carthage
 To integrate `FlowingMenu` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/FlowingMenu" >= 1.1.0
+github "yannickl/FlowingMenu" >= 2.0.0
 ```
 
 #### Swift Package Manager
@@ -142,7 +142,7 @@ let package = Package(
 )
 ```
 
-Note that the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more infomation checkout its [GitHub Page](https://github.com/apple/swift-package-manager)
+Note that the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more information checkout its [GitHub Page](https://github.com/apple/swift-package-manager).
 
 #### Manually
 

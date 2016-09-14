@@ -18,21 +18,21 @@ class FlowingMenuTransitionManagerTests: XCTTestCaseTemplate {
   }
 
   func testAnimatingFlag() {
-    XCTAssertTrue(transitionManager.displayLink.paused)
+    XCTAssertTrue(transitionManager.displayLink.isPaused)
 
     transitionManager.animating = true
 
-    XCTAssertFalse(transitionManager.displayLink.paused)
+    XCTAssertFalse(transitionManager.displayLink.isPaused)
 
     transitionManager.animating = false
 
-    XCTAssertTrue(transitionManager.displayLink.paused)
+    XCTAssertTrue(transitionManager.displayLink.isPaused)
   }
 
   func testPresentMenu() {
-    let expectation = expectationWithDescription("Present menu animation")
+    let expec = expectation(description: "Present menu animation")
 
-    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+    DispatchQueue.main.async { [weak self] in
       let menuView      = UIView()
       let otherView     = UIView()
       let containerView = UIView()
@@ -40,17 +40,17 @@ class FlowingMenuTransitionManagerTests: XCTTestCaseTemplate {
       let duration      = 0.2
 
       self?.transitionManager.presentMenu(menuView, otherView: otherView, containerView: containerView, status: status, duration: duration) {
-        expectation.fulfill()
+        expec.fulfill()
       }
     }
 
-    waitForExpectationsWithTimeout(1, handler: nil)
+    waitForExpectations(timeout: 1, handler: nil)
   }
 
   func testPresentMenu_Interactive() {
-    let expectation = expectationWithDescription("Present menu animation")
+    let expec = expectation(description: "Present menu animation")
 
-    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+    DispatchQueue.main.async { [weak self] in
       let menuView      = UIView()
       let otherView     = UIView()
       let containerView = UIView()
@@ -59,17 +59,17 @@ class FlowingMenuTransitionManagerTests: XCTTestCaseTemplate {
 
       self?.transitionManager.interactive = true
       self?.transitionManager.presentMenu(menuView, otherView: otherView, containerView: containerView, status: status, duration: duration) {
-        expectation.fulfill()
+        expec.fulfill()
       }
     }
 
-    waitForExpectationsWithTimeout(1, handler: nil)
+    waitForExpectations(timeout: 1, handler: nil)
   }
 
   func testDismissMenu() {
-    let expectation = expectationWithDescription("Present menu animation")
+    let expec = expectation(description: "Dismiss menu animation")
 
-    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+    DispatchQueue.main.async { [weak self] in
       let menuView      = UIView()
       let otherView     = UIView()
       let containerView = UIView()
@@ -77,17 +77,17 @@ class FlowingMenuTransitionManagerTests: XCTTestCaseTemplate {
       let duration      = 0.2
 
       self?.transitionManager.dismissMenu(menuView, otherView: otherView, containerView: containerView, status: status, duration: duration) {
-        expectation.fulfill()
+        expec.fulfill()
       }
     }
 
-    waitForExpectationsWithTimeout(1, handler: nil)
+    waitForExpectations(timeout: 1, handler: nil)
   }
 
   func testDismissMenu_Interactive() {
-    let expectation = expectationWithDescription("Present menu animation")
+    let expec = expectation(description: "Dismiss menu animation")
 
-    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+    DispatchQueue.main.async { [weak self] in
       let menuView      = UIView()
       let otherView     = UIView()
       let containerView = UIView()
@@ -96,10 +96,10 @@ class FlowingMenuTransitionManagerTests: XCTTestCaseTemplate {
 
       self?.transitionManager.interactive = true
       self?.transitionManager.dismissMenu(menuView, otherView: otherView, containerView: containerView, status: status, duration: duration) {
-        expectation.fulfill()
+        expec.fulfill()
       }
     }
 
-    waitForExpectationsWithTimeout(1, handler: nil)
+    waitForExpectations(timeout: 1, handler: nil)
   }
 }

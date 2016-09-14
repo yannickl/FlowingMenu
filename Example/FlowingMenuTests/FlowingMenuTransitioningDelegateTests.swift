@@ -22,31 +22,31 @@ class FlowingMenuTransitioningDelegateTests: XCTTestCaseTemplate {
     let presenting = UIViewController()
     let source     = UIViewController()
 
-    let animation = transitionManager.animationControllerForPresentedController(presented, presentingController: presenting, sourceController: source)
+    let animation = transitionManager.animationController(forPresented: presented, presenting: presenting, source: source)
 
     XCTAssertNotNil(animation)
-    XCTAssertEqual(transitionManager.animationMode, FlowingMenuTransitionManager.AnimationMode.Presentation)
+    XCTAssertEqual(transitionManager.animationMode, FlowingMenuTransitionManager.AnimationMode.presentation)
   }
 
   func testAnimationControllerForDismissedController() {
     let dismissed = UIViewController()
 
-    let animation = transitionManager.animationControllerForDismissedController(dismissed)
+    let animation = transitionManager.animationController(forDismissed: dismissed)
 
     XCTAssertNotNil(animation)
-    XCTAssertEqual(transitionManager.animationMode, FlowingMenuTransitionManager.AnimationMode.Dismissal)
+    XCTAssertEqual(transitionManager.animationMode, FlowingMenuTransitionManager.AnimationMode.dismissal)
   }
 
   func testInteractionControllerForPresentation() {
     XCTAssertFalse(transitionManager.interactive)
 
-    var interaction = transitionManager.interactionControllerForPresentation(transitionManager)
+    var interaction = transitionManager.interactionControllerForPresentation(using: transitionManager)
 
     XCTAssertNil(interaction)
 
     transitionManager.interactive = true
 
-    interaction = transitionManager.interactionControllerForPresentation(transitionManager)
+    interaction = transitionManager.interactionControllerForPresentation(using: transitionManager)
 
     XCTAssertNotNil(interaction)
   }
@@ -54,13 +54,13 @@ class FlowingMenuTransitioningDelegateTests: XCTTestCaseTemplate {
   func testInteractionControllerForDismissal() {
     XCTAssertFalse(transitionManager.interactive)
 
-    var interaction = transitionManager.interactionControllerForDismissal(transitionManager)
+    var interaction = transitionManager.interactionControllerForDismissal(using: transitionManager)
 
     XCTAssertNil(interaction)
 
     transitionManager.interactive = true
 
-    interaction = transitionManager.interactionControllerForDismissal(transitionManager)
+    interaction = transitionManager.interactionControllerForDismissal(using: transitionManager)
 
     XCTAssertNotNil(interaction)
   }

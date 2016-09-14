@@ -20,7 +20,7 @@ class FlowingMenuDelegateTests: XCTTestCaseTemplate {
   // MARK: - Default
 
   func testFlowingMenuWidthOfMenuView_Default() {
-    let view  = UIView(frame: CGRectMake(0, 0, 36, 36))
+    let view  = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
     let width = transitionManager.flowingMenu(transitionManager, widthOfMenuView: view)
 
     XCTAssertEqual(width, 24)
@@ -43,8 +43,8 @@ class FlowingMenuDelegateTests: XCTTestCaseTemplate {
   // MARK: - Custom
 
   func testFlowingMenuWidthOfMenuView_Custom() {
-    let expectation = expectationWithDescription("Get Width")
-    let view        = UIView(frame: CGRectMake(0, 0, 300, 400))
+    let expec = expectation(description: "Get Width")
+    let view  = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
 
     class ConcreteDelegate: FlowingMenuDelegate {
       let expectation: XCTestExpectation
@@ -53,23 +53,23 @@ class FlowingMenuDelegateTests: XCTTestCaseTemplate {
         self.expectation = expectation
       }
 
-      private func flowingMenu(flowingMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
+      func flowingMenu(_ flowingMenu: FlowingMenuTransitionManager, widthOfMenuView menuView: UIView) -> CGFloat {
         expectation.fulfill()
 
         return menuView.bounds.width
       }
     }
 
-    let delegate = ConcreteDelegate(expectation: expectation)
+    let delegate = ConcreteDelegate(expectation: expec)
     let width    = delegate.flowingMenu(transitionManager, widthOfMenuView: view)
 
     XCTAssertEqual(view.bounds.width, width)
 
-    waitForExpectationsWithTimeout(0.1, handler: nil)
+    waitForExpectations(timeout: 0.1, handler: nil)
   }
 
   func testColorOfElasticShapeInFlowingMenu_Custom() {
-    let expectation = expectationWithDescription("Get Color")
+    let expec = expectation(description: "Get Color")
 
     class ConcreteDelegate: FlowingMenuDelegate {
       let expectation: XCTestExpectation
@@ -78,23 +78,23 @@ class FlowingMenuDelegateTests: XCTTestCaseTemplate {
         self.expectation = expectation
       }
 
-      private func colorOfElasticShapeInFlowingMenu(flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
+      func colorOfElasticShapeInFlowingMenu(_ flowingMenu: FlowingMenuTransitionManager) -> UIColor? {
         expectation.fulfill()
 
-        return UIColor.yellowColor()
+        return UIColor.yellow
       }
     }
 
-    let delegate = ConcreteDelegate(expectation: expectation)
+    let delegate = ConcreteDelegate(expectation: expec)
     let color    = delegate.colorOfElasticShapeInFlowingMenu(transitionManager)
 
-    XCTAssertEqual(color, UIColor.yellowColor())
+    XCTAssertEqual(color, UIColor.yellow)
 
-    waitForExpectationsWithTimeout(0.1, handler: nil)
+    waitForExpectations(timeout: 0.1, handler: nil)
   }
 
   func testFlowingMenuNeedsPresentMenu_Custom() {
-    let expectation = expectationWithDescription("Present Menu")
+    let expec = expectation(description: "Present Menu")
 
     class ConcreteDelegate: FlowingMenuDelegate {
       let expectation: XCTestExpectation
@@ -103,19 +103,19 @@ class FlowingMenuDelegateTests: XCTTestCaseTemplate {
         self.expectation = expectation
       }
 
-      private func flowingMenuNeedsPresentMenu(flowingMenu: FlowingMenuTransitionManager) {
+      func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
         expectation.fulfill()
       }
     }
 
-    let delegate = ConcreteDelegate(expectation: expectation)
+    let delegate = ConcreteDelegate(expectation: expec)
     delegate.flowingMenuNeedsPresentMenu(transitionManager)
 
-    waitForExpectationsWithTimeout(0.1, handler: nil)
+    waitForExpectations(timeout: 0.1, handler: nil)
   }
 
   func testFlowingMenuNeedsDismissMenu_Custom() {
-    let expectation = expectationWithDescription("Dismiss Menu")
+    let expec = expectation(description: "Dismiss Menu")
 
     class ConcreteDelegate: FlowingMenuDelegate {
       let expectation: XCTestExpectation
@@ -124,14 +124,14 @@ class FlowingMenuDelegateTests: XCTTestCaseTemplate {
         self.expectation = expectation
       }
 
-      private func flowingMenuNeedsDismissMenu(flowingMenu: FlowingMenuTransitionManager) {
+      func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
         expectation.fulfill()
       }
     }
 
-    let delegate = ConcreteDelegate(expectation: expectation)
+    let delegate = ConcreteDelegate(expectation: expec)
     delegate.flowingMenuNeedsDismissMenu(transitionManager)
 
-    waitForExpectationsWithTimeout(0.1, handler: nil)
+    waitForExpectations(timeout: 0.1, handler: nil)
   }
 }

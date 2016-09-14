@@ -20,13 +20,13 @@ class FlowingMenuAnimatedTransitioningTests: XCTTestCaseTemplate {
   func testTransitionDuration() {
     XCTAssertFalse(transitionManager.interactive)
 
-    var duration = transitionManager.transitionDuration(nil)
+    var duration = transitionManager.transitionDuration(using: nil)
 
     XCTAssertEqual(duration, 0.2)
 
     transitionManager.interactive = true
 
-    duration = transitionManager.transitionDuration(nil)
+    duration = transitionManager.transitionDuration(using: nil)
 
     XCTAssertEqual(duration, 0.6)
   }

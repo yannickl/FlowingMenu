@@ -61,6 +61,6 @@ final class FlowingMenuTransitionStatus {
    finished normally.
   */
   func transitionWasCancelled() -> Bool {
-    return context?.transitionWasCancelled() ?? cancelled
+    return context?.transitionWasCancelled ?? cancelled
   }
 }

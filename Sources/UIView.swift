@@ -31,14 +31,14 @@ extension UIView {
   /**
    If `usePresentationLayer` is true it'll returns the presentation layer center
    point. Returns the center of the view otherwise.
-   
+
    - parameter usePresentationLayer: A boolean flag to tell which center point
    needs to return.
    - returns: The center point of the presentation layer or the view according to
    the flag.
   */
-  func center(usePresentationLayer: Bool) -> CGPoint {
-    if usePresentationLayer, let presentationLayer = layer.presentationLayer() {
+  func center(_ usePresentationLayer: Bool) -> CGPoint {
+    if usePresentationLayer, let presentationLayer = layer.presentation() as CALayer? {
       return presentationLayer.position
     }
 

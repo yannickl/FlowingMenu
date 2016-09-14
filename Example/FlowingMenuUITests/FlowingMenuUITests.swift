@@ -30,6 +30,6 @@ class FlowingMenuUITests: XCTestCase {
     tablesQuery.staticTexts["Inmaculada Cortes"].tap()
     app.navigationBars["Chat"].buttons["picto back"].tap()
 
-    tablesQuery.cells.containingType(.StaticText, identifier:"Silvia Herrero").staticTexts["Work"].tap()
+    tablesQuery.cells.containing(.staticText, identifier:"Silvia Herrero").staticTexts["Work"].tap()
   }
 }
