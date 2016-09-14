@@ -29,20 +29,22 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     flowingMenuTransitionManager.setInteractivePresentationView(view)
     flowingMenuTransitionManager.delegate = self
 
-    topBar.tintColor              = .white()
+    topBar.tintColor              = .white
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
       NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!,
-      NSForegroundColorAttributeName: UIColor.white()]
+      NSForegroundColorAttributeName: UIColor.white
+    ]
     userTableView.backgroundColor = mainColor
     view.backgroundColor          = mainColor
   }
 
   // MARK: - Interacting with Storyboards and Segues
 
-  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == PresentSegueName {
-      let vc                   = segue.destinationViewController
+      let vc                   = segue.destination
       vc.transitioningDelegate = flowingMenuTransitionManager
 
       flowingMenuTransitionManager.setInteractiveDismissView(vc.view)
@@ -56,7 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
 
   // MARK: - Managing the Status Bar
 
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
 

@@ -38,7 +38,7 @@ extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
    
    It returns itself.
   */
-  public func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animationMode = .presentation
 
     return self
@@ -50,7 +50,7 @@ extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
    
    It returns itself.
    */
-  public func animationController(forDismissedController dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animationMode = .dismissal
 
     return self
@@ -60,7 +60,7 @@ extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
    Asks the flowing menu transition manager for the interactive animator object to
    use when presenting a view controller.
   */
-  public func interactionController(forPresentation animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+  public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     animationMode = .presentation
 
     return interactive ? self : nil
@@ -70,7 +70,7 @@ extension FlowingMenuTransitionManager: UIViewControllerTransitioningDelegate {
    Asks the flowing menu transition manager for the interactive animator object to
    use when dismissing a view controller.
   */
-  public func interactionController(forDismissal animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+  public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     animationMode = .dismissal
 
     return interactive ? self : nil

@@ -74,7 +74,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   lazy var displayLink: CADisplayLink = {
     let displayLink    = CADisplayLink(target: self, selector: #selector(FlowingMenuTransitionManager.updateShapeLayer))
     displayLink.isPaused = true
-    displayLink.add(to: RunLoop.main(), forMode: RunLoopMode.defaultRunLoopMode.rawValue)
+    displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
 
     return displayLink
   }()
@@ -88,7 +88,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   // MARK: - Working with Animations
 
   /// Present menu animation.
-  func presentMenu(_ menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: TimeInterval, completion: () -> Void) {
+  func presentMenu(_ menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: TimeInterval, completion: @escaping () -> Void) {
     // Composing the view
     let ov              = otherView.snapshotView(afterScreenUpdates: true)
     ov?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -142,7 +142,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       shapeMaskLayer.removeAllAnimations()
 
       // Retrieve the shape color
-      let shapeColor = source.colorOfElasticShapeInFlowingMenu(self) ?? menuView.backgroundColor ?? .black()
+      let shapeColor = source.colorOfElasticShapeInFlowingMenu(self) ?? menuView.backgroundColor ?? .black
       shapeMaskLayer.path        = UIBezierPath(rect: (ov?.bounds)!).cgPath
       shapeLayer.actions         = ["position" : NSNull(), "bounds" : NSNull(), "path" : NSNull()]
       shapeLayer.backgroundColor = shapeColor.cgColor
@@ -215,7 +215,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   }
 
   /// Dismiss menu animation.
-  func dismissMenu(_ menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: TimeInterval, completion: () -> Void) {
+  func dismissMenu(_ menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: TimeInterval, completion: @escaping () -> Void) {
     otherView.frame = containerView.bounds
     let ov          = otherView.snapshotView(afterScreenUpdates: true)
 

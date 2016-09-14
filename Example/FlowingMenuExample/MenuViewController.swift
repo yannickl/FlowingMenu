@@ -21,18 +21,19 @@ final class MenuViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    topBar.tintColor              = .black()
+    topBar.tintColor              = .black
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
       NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!,
-      NSForegroundColorAttributeName: UIColor.black()]
+      NSForegroundColorAttributeName: UIColor.black
+    ]
     userTableView.backgroundColor = mainColor
     view.backgroundColor          = mainColor
   }
 
   // MARK: - Managing the Status Bar
 
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
 
