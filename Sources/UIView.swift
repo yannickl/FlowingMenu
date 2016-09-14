@@ -38,7 +38,7 @@ extension UIView {
    the flag.
   */
   func center(usePresentationLayer: Bool) -> CGPoint {
-    if usePresentationLayer, let presentationLayer = layer.presentationLayer() as? CALayer {
+    if usePresentationLayer, let presentationLayer = layer.presentationLayer() {
       return presentationLayer.position
     }
 

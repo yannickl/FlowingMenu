@@ -50,15 +50,15 @@ class FlowingMenuUIGestureRecognizerTests: XCTTestCaseTemplate {
   func testUpdateShapeLayer() {
     transitionManager.updateShapeLayer()
 
-    XCTAssertFalse(CGPathIsEmpty(transitionManager.shapeLayer.path))
-    XCTAssertEqual(CGPathGetPathBoundingBox(transitionManager.shapeLayer.path), CGRectZero)
+    XCTAssertFalse(CGPathIsEmpty(transitionManager.shapeLayer.path!))
+    XCTAssertEqual(CGPathGetPathBoundingBox(transitionManager.shapeLayer.path!), CGRectZero)
 
     transitionManager.controlViews[1].center = CGPointMake(5, 5)
     transitionManager.controlViews[2].center = CGPointMake(5, 5)
     transitionManager.controlViews[3].center = CGPointMake(0, 5)
 
     transitionManager.updateShapeLayer()
-    XCTAssertEqual(CGPathGetPathBoundingBox(transitionManager.shapeLayer.path), CGRectMake(0, 0, 5, 5))
+    XCTAssertEqual(CGPathGetPathBoundingBox(transitionManager.shapeLayer.path!), CGRectMake(0, 0, 5, 5))
   }
 
   // MARK: - Test Control Views

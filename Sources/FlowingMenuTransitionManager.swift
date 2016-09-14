@@ -91,9 +91,9 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   func presentMenu(menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: NSTimeInterval, completion: () -> Void) {
     // Composing the view
     let ov              = otherView.snapshotViewAfterScreenUpdates(true)
-    ov.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    ov!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 
-    containerView.addSubview(ov)
+    containerView.addSubview(ov!)
     containerView.addSubview(menuView)
 
     // Add the tap gesture
@@ -143,7 +143,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
 
       // Retrieve the shape color
       let shapeColor = source.colorOfElasticShapeInFlowingMenu(self) ?? menuView.backgroundColor ?? .blackColor()
-      shapeMaskLayer.path        = UIBezierPath(rect: ov.bounds).CGPath
+      shapeMaskLayer.path        = UIBezierPath(rect: ov!.bounds).CGPath
       shapeLayer.actions         = ["position" : NSNull(), "bounds" : NSNull(), "path" : NSNull()]
       shapeLayer.backgroundColor = shapeColor.CGColor
       shapeLayer.fillColor       = shapeColor.CGColor
@@ -167,7 +167,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       menuFrame.origin.x = 0
       menuView.frame     = menuFrame
       otherView.alpha    = 0
-      ov.alpha           = 0.4
+      ov!.alpha          = 0.4
       }) { _ in
         if self.interactive && !status.transitionWasCancelled() {
           self.interactive = false
@@ -222,18 +222,18 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     var menuFrame = menuView.frame
 
     containerView.addSubview(otherView)
-    containerView.addSubview(ov)
+    containerView.addSubview(ov!)
     containerView.addSubview(menuView)
 
     otherView.alpha = 0
-    ov.alpha        = 0.4
+    ov!.alpha       = 0.4
 
     UIView.animateWithDuration(duration, delay: 0, options: [.CurveEaseOut], animations: {
       menuFrame.origin.x = -menuFrame.width
       menuView.frame     = menuFrame
       
       otherView.alpha = 1
-      ov.alpha        = 1
+      ov!.alpha       = 1
       }) { _ in
         completion()
     }

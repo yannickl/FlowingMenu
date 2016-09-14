@@ -40,7 +40,7 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
     let fromVC = context.viewControllerForKey(UITransitionContextFromViewControllerKey)!
     let toVC   = context.viewControllerForKey(UITransitionContextToViewControllerKey)!
 
-    let containerView = context.containerView()!
+    let containerView = context.containerView()
     let menuView      = animationMode == .Presentation ? toVC.view : fromVC.view
     let otherView     = animationMode == .Presentation ? fromVC.view : toVC.view
 
