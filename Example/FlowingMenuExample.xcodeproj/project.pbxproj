@@ -381,7 +381,6 @@
 				TargetAttributes = {
 					CECF53C11C0F86DD00DF6B92 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 5SJ773RP6R;
 						LastSwiftMigration = 0800;
 					};
 					CECF54021C11A6C600DF6B92 = {
@@ -663,7 +662,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5SJ773RP6R;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FlowingMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuExample;
@@ -677,7 +676,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5SJ773RP6R;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FlowingMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.FlowingMenuExample;
