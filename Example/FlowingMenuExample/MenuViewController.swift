@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MenuViewController: UIViewController, UITableViewDataSource {
+final class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   @IBOutlet weak var topBar: UINavigationBar!
   @IBOutlet weak var userTableView: UITableView!
   @IBOutlet weak var backButtonItem: UIBarButtonItem!
@@ -55,5 +55,11 @@ final class MenuViewController: UIViewController, UITableViewDataSource {
     cell.contentView.backgroundColor = mainColor
 
     return cell
+  }
+
+  // MARK: - UITableView Delegate Methods
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("Select row at \(indexPath)")
   }
 }

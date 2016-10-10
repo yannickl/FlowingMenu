@@ -35,7 +35,7 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
    Tells your animator object to perform the transition animations.
 
    The context object containing information about the transition.
-  */
+   */
   public func animateTransition(using context: UIViewControllerContextTransitioning) {
     let fromVC = context.viewController(forKey: .from)
     let toVC   = context.viewController(forKey: .to)
@@ -49,12 +49,14 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
 
     action(menuView!, otherView!, containerView, status, transitionDuration(using: context)) {
       let canceled = context.transitionWasCancelled
-      context.completeTransition(!context.transitionWasCancelled)
+
+      context.completeTransition(!canceled)
+
       if (!canceled) {
-            if self.animationMode == .presentation {
-                UIApplication.shared.keyWindow?.insertSubview(fromVC!.view, at:0)
-            }
+        if self.animationMode == .presentation {
+          UIApplication.shared.keyWindow?.insertSubview(fromVC!.view, at:0)
         }
+      }
     }
   }
 
@@ -63,7 +65,7 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
    animation.
 
    The context object containing information to use during the transition.
-  */
+   */
   public func transitionDuration(using context: UIViewControllerContextTransitioning?) -> TimeInterval {
     return interactive ? 0.6 : 0.2
   }

@@ -20,6 +20,9 @@ final class UserContactCellView: UITableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
 
+    // iOS 10 bug: rdar://27644391
+    contentView.layoutSubviews()
+    
     avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
   }
 }
