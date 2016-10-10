@@ -1,28 +1,28 @@
 /*
-* FlowingMenu
-*
-* Copyright 2015-present Yannick Loriot.
-* http://yannickloriot.com
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*
-*/
+ * FlowingMenu
+ *
+ * Copyright 2015-present Yannick Loriot.
+ * http://yannickloriot.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */
 
 import UIKit
 import QuartzCore
@@ -39,11 +39,11 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   // MARK: - Specifying the Delegate
 
   /**
-  The delegate for the flowing transition manager.
+   The delegate for the flowing transition manager.
 
-  The delegate must adopt the `FlowingMenuDelegate` protocol and implement the
-  required methods to manage the interactive animations.
-  */
+   The delegate must adopt the `FlowingMenuDelegate` protocol and implement the
+   required methods to manage the interactive animations.
+   */
   public weak var delegate: FlowingMenuDelegate?
 
   // MARK: - Managing the Animation Mode
@@ -90,14 +90,15 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   /// Present menu animation.
   func presentMenu(_ menuView: UIView, otherView: UIView, containerView: UIView, status: FlowingMenuTransitionStatus, duration: TimeInterval, completion: @escaping () -> Void) {
     // Composing the view
-    let ov               = otherView.snapshotView(afterScreenUpdates: true)
-    ov?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    guard let ov = otherView.snapshotView(afterScreenUpdates: true) else { return }
 
-    containerView.addSubview(ov!)
+    ov.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+    containerView.addSubview(ov)
     containerView.addSubview(menuView)
 
     // Add the tap gesture
-    addTapGesture(containerView)
+    addTapGesture(ov)
 
     // Add a mask to the menu to create the bubble effect
     let maskLayer       = CAShapeLayer()
@@ -143,7 +144,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
 
       // Retrieve the shape color
       let shapeColor = source.colorOfElasticShapeInFlowingMenu(self) ?? menuView.backgroundColor ?? .black
-      shapeMaskLayer.path        = UIBezierPath(rect: ov!.bounds).cgPath
+      shapeMaskLayer.path        = UIBezierPath(rect: ov.bounds).cgPath
       shapeLayer.actions         = ["position" : NSNull(), "bounds" : NSNull(), "path" : NSNull()]
       shapeLayer.backgroundColor = shapeColor.cgColor
       shapeLayer.fillColor       = shapeColor.cgColor
@@ -167,50 +168,50 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       menuFrame.origin.x = 0
       menuView.frame     = menuFrame
       otherView.alpha    = 0
-      ov?.alpha          = 0.4
-      }) { _ in
-        if self.interactive && !status.transitionWasCancelled() {
-          self.interactive = false
+      ov.alpha           = 0.4
+    }) { _ in
+      if self.interactive && !status.transitionWasCancelled() {
+        self.interactive = false
 
-          let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
-          bubbleAnim.values              = [beginRect, middleRect, endRect].map { UIBezierPath(ovalIn: $0).cgPath }
-          bubbleAnim.keyTimes            = [0, 0.4, 1]
-          bubbleAnim.duration            = duration
-          bubbleAnim.isRemovedOnCompletion = false
-          bubbleAnim.fillMode            = kCAFillModeForwards
-          maskLayer.add(bubbleAnim, forKey: "bubbleAnim")
+        let bubbleAnim                 = CAKeyframeAnimation(keyPath: "path")
+        bubbleAnim.values              = [beginRect, middleRect, endRect].map { UIBezierPath(ovalIn: $0).cgPath }
+        bubbleAnim.keyTimes            = [0, 0.4, 1]
+        bubbleAnim.duration            = duration
+        bubbleAnim.isRemovedOnCompletion = false
+        bubbleAnim.fillMode            = kCAFillModeForwards
+        maskLayer.add(bubbleAnim, forKey: "bubbleAnim")
 
-          let anim                 = CAKeyframeAnimation(keyPath: "path")
-          anim.values              = [beginPath, middlePath, endPath].map { $0.cgPath }
-          anim.keyTimes            = [0, 0.4, 1]
-          anim.duration            = duration
-          anim.isRemovedOnCompletion = false
-          anim.fillMode            = kCAFillModeForwards
-          self.shapeMaskLayer.add(anim, forKey: "bubbleAnim")
+        let anim                 = CAKeyframeAnimation(keyPath: "path")
+        anim.values              = [beginPath, middlePath, endPath].map { $0.cgPath }
+        anim.keyTimes            = [0, 0.4, 1]
+        anim.duration            = duration
+        anim.isRemovedOnCompletion = false
+        anim.fillMode            = kCAFillModeForwards
+        self.shapeMaskLayer.add(anim, forKey: "bubbleAnim")
 
-          UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
-            for view in self.controlViews {
-              view.center.x = menuWidth
-            }
-            }, completion: { _ in
-              self.shapeLayer.removeFromSuperlayer()
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
+          for view in self.controlViews {
+            view.center.x = menuWidth
+          }
+          }, completion: { _ in
+            self.shapeLayer.removeFromSuperlayer()
 
-              containerView.isUserInteractionEnabled = true
+            containerView.isUserInteractionEnabled = true
 
-              menuView.layer.mask = nil
-              self.animating      = false
+            menuView.layer.mask = nil
+            self.animating      = false
 
-              completion()
-          })
-        }
-        else {
-          menuView.layer.mask = nil
-          self.animating      = false
+            completion()
+        })
+      }
+      else {
+        menuView.layer.mask = nil
+        self.animating      = false
 
-          containerView.isUserInteractionEnabled = true
+        containerView.isUserInteractionEnabled = true
 
-          completion()
-        }
+        completion()
+      }
     }
   }
 
@@ -231,11 +232,11 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseOut], animations: {
       menuFrame.origin.x = -menuFrame.width
       menuView.frame     = menuFrame
-
+      
       otherView.alpha = 1
       ov?.alpha       = 1
-      }) { _ in
-        completion()
+    }) { _ in
+      completion()
     }
   }
 }
