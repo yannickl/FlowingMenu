@@ -48,7 +48,13 @@ extension FlowingMenuTransitionManager: UIViewControllerAnimatedTransitioning {
     let status = FlowingMenuTransitionStatus(context: context)
 
     action(menuView!, otherView!, containerView, status, transitionDuration(using: context)) {
+      let canceled = context.transitionWasCancelled
       context.completeTransition(!context.transitionWasCancelled)
+      if (!canceled) {
+            if self.animationMode == .presentation {
+                UIApplication.shared.keyWindow?.insertSubview(fromVC!.view, at:0)
+            }
+        }
     }
   }
 
