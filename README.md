@@ -8,6 +8,10 @@ FlowingMenu provides an interactive transition manager to display menu with a fl
   <img src="http://yannickloriot.com/resources/flowingmenu.gif" alt="FlowingMenu" width="300"/>
 </p>
 
+<p align="center">
+    <a href="#requirements">Requirements</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
+</p>
+
 ## Requirements
 
 - iOS 8.0+
