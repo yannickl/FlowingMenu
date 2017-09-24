@@ -20,7 +20,7 @@ FlowingMenu provides an interactive transition manager to display menu with a fl
 
 ## Usage
 
-At first, import FlowingMenu
+At first, import FlowingMenu:
 
 ```swift
 import FlowingMenu
