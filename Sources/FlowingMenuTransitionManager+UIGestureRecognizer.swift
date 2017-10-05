@@ -78,7 +78,7 @@ extension FlowingMenuTransitionManager {
     - parameter panGesture: The `UIScreenEdgePanGestureRecognizer` sender
     object.
   */
-  func panToPresentAction(_ panGesture: UIScreenEdgePanGestureRecognizer) {
+  @objc func panToPresentAction(_ panGesture: UIScreenEdgePanGestureRecognizer) {
     let view        = panGesture.view!
     let translation = panGesture.translation(in: view)
     let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
@@ -127,7 +127,7 @@ extension FlowingMenuTransitionManager {
 
    - parameter panGesture: The `UIPanGestureRecognizer` sender object.
    */
-  func panToDismissAction(_ panGesture: UIPanGestureRecognizer) {
+  @objc func panToDismissAction(_ panGesture: UIPanGestureRecognizer) {
     let view        = panGesture.view!
     let translation = panGesture.translation(in: view)
     let menuWidth   = (delegate ?? self).flowingMenu(self, widthOfMenuView: view)
@@ -159,7 +159,7 @@ extension FlowingMenuTransitionManager {
 
    - parameter tapGesture: The `UITapGestureRecognizer` sender object.
    */
-  func tapToDismissAction(_ tapGesture: UITapGestureRecognizer) {
+  @objc func tapToDismissAction(_ tapGesture: UITapGestureRecognizer) {
     delegate?.flowingMenuNeedsDismissMenu(self)
   }
 

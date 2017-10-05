@@ -164,7 +164,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
 
     containerView.isUserInteractionEnabled = false
 
-    UIView.animate(withDuration: duration, animations: { _ in
+    UIView.animate(withDuration: duration, animations: { 
       menuFrame.origin.x = 0
       menuView.frame     = menuFrame
       otherView.alpha    = 0

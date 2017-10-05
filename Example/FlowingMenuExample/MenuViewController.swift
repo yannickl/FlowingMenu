@@ -24,8 +24,8 @@ final class MenuViewController: UIViewController, UITableViewDataSource, UITable
     topBar.tintColor              = .black
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
-      NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!,
-      NSForegroundColorAttributeName: UIColor.black
+      NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Light", size: 22)!,
+      NSAttributedStringKey.foregroundColor: UIColor.black
     ]
     userTableView.backgroundColor = mainColor
     view.backgroundColor          = mainColor
