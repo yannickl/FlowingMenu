@@ -102,7 +102,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'FlowingMenu', '~> 2.0.1'
+pod 'FlowingMenu', '~> 3.0.0'
 ```
 
 Install into your project:
@@ -133,7 +133,7 @@ $ brew install carthage
 To integrate `FlowingMenu` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/FlowingMenu" >= 2.0.1
+github "yannickl/FlowingMenu" >= 3.0.0
 ```
 
 #### Swift Package Manager
@@ -145,7 +145,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/yannickl/FlowingMenu.git", versions: "2.0.1" ..< Version.max)
+        .Package(url: "https://github.com/yannickl/FlowingMenu.git", versions: "3.0.0" ..< Version.max)
     ]
 )
 ```
