@@ -38,7 +38,7 @@ extension FlowingMenuTransitionManager {
   public func setInteractivePresentationView(_ view: UIView) {
     let screenEdgePanGesture   = UIScreenEdgePanGestureRecognizer()
     screenEdgePanGesture.edges = .left
-    screenEdgePanGesture.addTarget(self, action:#selector(FlowingMenuTransitionManager.panToPresentAction(_:)))
+    screenEdgePanGesture.addTarget(self, action:#selector(FlowingMenuTransitionManager.panToPresentAction))
 
     view.addGestureRecognizer(screenEdgePanGesture)
   }
@@ -188,7 +188,7 @@ extension FlowingMenuTransitionManager {
   // MARK: - Updating Shapes
 
   /// Update the shape layer using the current control view positions.
-  func updateShapeLayer() {
+  @objc func updateShapeLayer() {
     shapeLayer.path = currentPath()
   }
 
