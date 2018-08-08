@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 3.0.1](https://github.com/yannickl/FlowingMenu/releases/tag/3.0.1)
+Released on 2018-08-08.
+
+Minor update to Swift 4.1
+
 ## [Version 3.0.0](https://github.com/yannickl/FlowingMenu/releases/tag/3.0.0)
 Released on 2017-10-11.
 
