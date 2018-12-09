@@ -24,11 +24,12 @@ class FlowingMenuUITests: XCTestCase {
 
   func testTransition() {
     let app = XCUIApplication()
-    app.navigationBars["Contacts"].buttons["picto chat"].tap()
+
+    app.navigationBars["Contacts"].children(matching: .button).element.tap()
 
     let tablesQuery = app.tables
     tablesQuery.staticTexts["Inmaculada Cortes"].tap()
-    app.navigationBars["Chat"].buttons["picto back"].tap()
+    app.navigationBars["Chat"].children(matching: .button).element.tap()
 
     tablesQuery.cells.containing(.staticText, identifier:"Silvia Herrero").staticTexts["Work"].tap()
   }
