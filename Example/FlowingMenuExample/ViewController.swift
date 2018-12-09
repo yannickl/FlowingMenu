@@ -32,8 +32,8 @@ class ViewController: UIViewController, UITableViewDataSource, FlowingMenuDelega
     topBar.tintColor              = .white
     topBar.barTintColor           = mainColor
     topBar.titleTextAttributes    = [
-      NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Light", size: 22)!,
-      NSAttributedStringKey.foregroundColor: UIColor.white
+      NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 22)!,
+      NSAttributedString.Key.foregroundColor: UIColor.white
     ]
     userTableView.backgroundColor = mainColor
     view.backgroundColor          = mainColor

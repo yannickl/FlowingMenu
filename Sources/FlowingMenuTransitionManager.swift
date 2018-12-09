@@ -74,7 +74,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
   lazy var displayLink: CADisplayLink = {
     let displayLink      = CADisplayLink(target: self, selector: #selector(FlowingMenuTransitionManager.updateShapeLayer))
     displayLink.isPaused = true
-    displayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+    displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.default)
 
     return displayLink
   }()
@@ -132,7 +132,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       bubbleAnim.keyTimes            = [0, 0.4, 1]
       bubbleAnim.duration            = duration
       bubbleAnim.isRemovedOnCompletion = false
-      bubbleAnim.fillMode            = kCAFillModeForwards
+      bubbleAnim.fillMode            = CAMediaTimingFillMode.forwards
       maskLayer.add(bubbleAnim, forKey: "bubbleAnim")
     }
     else {
@@ -178,7 +178,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
         bubbleAnim.keyTimes            = [0, 0.4, 1]
         bubbleAnim.duration            = duration
         bubbleAnim.isRemovedOnCompletion = false
-        bubbleAnim.fillMode            = kCAFillModeForwards
+        bubbleAnim.fillMode            = CAMediaTimingFillMode.forwards
         maskLayer.add(bubbleAnim, forKey: "bubbleAnim")
 
         let anim                 = CAKeyframeAnimation(keyPath: "path")
@@ -186,7 +186,7 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
         anim.keyTimes            = [0, 0.4, 1]
         anim.duration            = duration
         anim.isRemovedOnCompletion = false
-        anim.fillMode            = kCAFillModeForwards
+        anim.fillMode            = CAMediaTimingFillMode.forwards
         self.shapeMaskLayer.add(anim, forKey: "bubbleAnim")
 
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
