@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FlowingMenu'
-  s.version          = '3.0.1'
+  s.version          = '3.1.0'
   s.license          = 'MIT'
   s.summary          = 'Interactive view transition to display menus with flowing and bouncing effects in Swift'
   s.homepage         = 'https://github.com/yannickl/FlowingMenu.git'
