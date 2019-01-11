@@ -2,7 +2,7 @@
 
 [![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Version](https://cocoapod-badges.herokuapp.com/v/FlowingMenu/badge.svg)](http://cocoadocs.org/docsets/FlowingMenu/) [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-%E2%9C%93-brightgreen.svg?style=flat)](https://github.com/apple/swift-package-manager) [![Carthage compatible](https://img.shields.io/badge/Carthage-%E2%9C%93-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/FlowingMenu.svg?branch=master)](https://travis-ci.org/yannickl/FlowingMenu) [![codecov.io](http://codecov.io/github/yannickl/FlowingMenu/coverage.svg?branch=master)](http://codecov.io/github/yannickl/FlowingMenu?branch=master) [![codebeat badge](https://codebeat.co/badges/5b519917-eedc-4b7b-8a2d-9dfeed597894)](https://codebeat.co/projects/github-com-yannickl-flowingmenu)
 
-FlowingMenu provides an interactive transition manager to display menu with a flowing and bouncing effects. The Objective-C countepart is here https://github.com/yannickl/YLFlowingMenu.
+**FlowingMenu** provides an interactive transition manager to display menu with a flowing and bouncing effects. The Objective-C countepart is here https://github.com/yannickl/YLFlowingMenu.
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/flowingmenu.gif" alt="FlowingMenu" width="300"/>
