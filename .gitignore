@@ -17,3 +17,4 @@ DerivedData
 *.hmap
 *.xccheckout
 Carthage/*
+*.swiftpm
