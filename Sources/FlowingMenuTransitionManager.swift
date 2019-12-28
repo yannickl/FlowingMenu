@@ -84,7 +84,9 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       displayLink.isPaused = !animating
     }
   }
-
+  ///use bottomView to avoid gesture conflict when menview is kindof UIScrollerView
+  lazy var bottomView = UIView()
+    
   // MARK: - Working with Animations
 
   /// Present menu animation.
@@ -93,10 +95,8 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
     guard let ov = otherView.snapshotView(afterScreenUpdates: true) else { return }
 
     ov.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
     containerView.addSubview(ov)
-    containerView.addSubview(menuView)
-
+ 
     // Add the tap gesture
     addTapGesture(ov)
 
@@ -106,6 +106,19 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
 
     let source      = delegate ?? self
     let menuWidth   = source.flowingMenu(self, widthOfMenuView: menuView)
+    
+    //use bottomView to avoid gesture conflict when menview is kindof UIScrollerView
+    if menuView.isKind(of: UIScrollView.self) {
+        bottomView.frame = CGRect(x: 0, y: 0, width: menuWidth, height: menuView.bounds.size.height)
+        bottomView.addSubview(menuView);
+        containerView.addSubview(bottomView)
+        self.setInteractiveDismissView(bottomView)
+    }else{
+        containerView.addSubview(menuView)
+        self.setInteractiveDismissView(menuView)
+    }
+    
+    
     let maxSideSize = max(menuView.bounds.width, menuView.bounds.height)
     let beginRect   = CGRect(x: 1, y: menuView.bounds.height / 2 - 1, width: 2, height: 2)
     let middleRect  = CGRect(x: -menuWidth, y: 0, width: menuWidth * 2, height: menuView.bounds.height)
@@ -236,7 +249,23 @@ public final class FlowingMenuTransitionManager: UIPercentDrivenInteractiveTrans
       otherView.alpha = 1
       ov?.alpha       = 1
     }) { _ in
-      completion()
+        
+        let canceled = status.transitionWasCancelled()
+
+        if !canceled {
+            self.bottomView.removeFromSuperview()
+        }else{
+            
+            if menuView.isKind(of: UIScrollView.self){
+                menuView.removeFromSuperview()
+                self.addTapGesture(ov!)
+                self.bottomView.addSubview(menuView)
+                containerView.insertSubview(self.bottomView, aboveSubview: ov!)
+            }else{
+                self.addTapGesture(ov!)
+            }
+        }
+        completion()
     }
   }
 }
